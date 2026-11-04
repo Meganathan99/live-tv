@@ -17,7 +17,9 @@ window.App = {
     favorites: new Set(),
     history: [],
     currentChannel: null,
-    searchDebounce: null
+    searchDebounce: null,
+    cricketFilter: 'all',
+    ottFilter: 'all'
   },
 
   async init() {
@@ -170,6 +172,24 @@ window.App = {
     }
 
     try {
+      if (this.state.tab === 'cricket') {
+        const select = document.getElementById('playlist-preset-select');
+        if (select) select.value = 'tamil';
+        heading.textContent = '🏏 Cricket Live Matches & Match Highlights';
+        this.renderCricketSection(this.state.cricketFilter || 'all');
+        pagination.style.display = 'none';
+        return;
+      }
+
+      if (this.state.tab === 'ott') {
+        const select = document.getElementById('playlist-preset-select');
+        if (select) select.value = 'tamil';
+        heading.textContent = '🎬 OTT Hub (Netflix, Disney+ Hotstar, Amazon Prime Video)';
+        this.renderOTTSection(this.state.ottFilter || 'all');
+        pagination.style.display = 'none';
+        return;
+      }
+
       if (this.state.tab === 'tamil') {
         const select = document.getElementById('playlist-preset-select');
         if (select) select.value = 'tamil';
@@ -591,6 +611,14 @@ window.App = {
     });
 
     // Clear filters button
+    // Video Highlights & Trailer Modal listeners
+    const modalViewer = document.getElementById('modal-video-viewer');
+    const closeBtn = document.getElementById('modal-close-video-viewer');
+    closeBtn?.addEventListener('click', () => this.closeVideoModal());
+    modalViewer?.addEventListener('click', (e) => {
+      if (e.target === modalViewer) this.closeVideoModal();
+    });
+
     document.getElementById('btn-clear-filters')?.addEventListener('click', () => this.resetFilters());
     document.getElementById('btn-empty-reset')?.addEventListener('click', () => this.resetFilters());
 

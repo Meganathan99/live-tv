@@ -113,6 +113,23 @@
           <span class="nav-badge" id="nav-count-tamil" style="background: rgba(239, 68, 68, 0.3); color: #fff;">126</span>
         </button>
 
+        <button class="nav-item-btn" data-tab="cricket" style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); color: #6ee7b7;">
+          <div class="nav-item-content">
+            <span style="font-size: 1.05rem;">🏏</span>
+            <span style="font-weight: 700;">Cricket Live & Highlights</span>
+          </div>
+          <span class="nav-badge" id="nav-count-cricket" style="background: rgba(16, 185, 129, 0.3); color: #fff;">LIVE</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="ott" style="background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); color: #c4b5fd;">
+          <div class="nav-item-content">
+            <span style="font-size: 1.05rem;">🎬</span>
+            <span style="font-weight: 700;">OTT Hub (Netflix, Hotstar, Prime)</span>
+          </div>
+          <span class="nav-badge" id="nav-count-ott" style="background: rgba(139, 92, 246, 0.3); color: #fff;">HOT</span>
+        </button>
+
+
         <button class="nav-item-btn" data-tab="all">
           <div class="nav-item-content">
             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
@@ -439,10 +456,36 @@
     </div>
   </div>
 
+  
+  <!-- Cinema Video Highlights & Trailer Modal -->
+  <div class="modal-backdrop" id="modal-video-viewer">
+    <div class="modal-card modal-cinema-card">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+          <span id="modal-video-badge" class="tag-badge" style="background: var(--accent-primary); color: #fff; flex-shrink: 0;">HIGHLIGHT</span>
+          <h3 class="modal-title" id="modal-video-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Match Highlight</h3>
+        </div>
+        <button class="modal-close-btn" id="modal-close-video-viewer" title="Close (Esc)">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </div>
+      <div class="modal-cinema-body">
+        <div class="video-embed-container" id="modal-video-embed-box">
+          <!-- Dynamic Video Embed or Stream -->
+        </div>
+        <div class="modal-cinema-info" id="modal-video-meta">
+          <div class="modal-cinema-desc" id="modal-video-desc"></div>
+          <div class="modal-cinema-actions" id="modal-video-actions"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notifications Container -->
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Application Scripts -->
+  <script src="js/cricket-ott-data.js"></script>
   <script src="js/api.js"></script>
   <script src="js/player.js"></script>
   <script src="js/app.js"></script>

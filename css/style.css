@@ -1158,3 +1158,650 @@ body {
     gap: 10px;
   }
 }
+
+
+/* ==========================================================================
+   Cricket Live & Match Highlights Styles
+   ========================================================================== */
+
+.cricket-banner-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  grid-column: 1 / -1;
+}
+
+.cricket-score-ticker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.score-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.score-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.score-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.score-badge.live-pulse {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.score-teams-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0;
+}
+
+.score-team-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.score-team-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.score-team-runs {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #34d399;
+  font-family: monospace;
+}
+
+.score-vs-divider {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  padding: 0 10px;
+}
+
+.score-card-footer {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.score-watch-btn {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: var(--transition);
+}
+
+.score-watch-btn:hover {
+  background: #10b981;
+  color: #000;
+}
+
+/* Sub-filter Bar */
+.sub-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 12px 0;
+  grid-column: 1 / -1;
+  scrollbar-width: none;
+}
+
+.sub-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.sub-filter-pill {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.sub-filter-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.sub-filter-pill.active {
+  background: var(--accent-gradient);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+/* Highlights Video Card */
+.highlight-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition);
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  border-color: #10b981;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.25);
+}
+
+.highlight-thumb-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+.highlight-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.highlight-card:hover .highlight-thumb {
+  transform: scale(1.05);
+}
+
+.highlight-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.highlight-card:hover .highlight-play-overlay {
+  background: rgba(16, 185, 129, 0.25);
+}
+
+.highlight-play-btn-circle {
+  width: 48px;
+  height: 48px;
+  background: rgba(16, 185, 129, 0.9);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.highlight-card:hover .highlight-play-btn-circle {
+  transform: scale(1.15);
+  background: #10b981;
+}
+
+.highlight-duration-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.highlight-tag-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(16, 185, 129, 0.9);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.highlight-info-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.highlight-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.highlight-desc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.highlight-meta-row {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+
+/* ==========================================================================
+   OTT Hub (Netflix, Disney+ Hotstar, Amazon Prime) Styles
+   ========================================================================== */
+
+.ott-hub-header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ott-launcher-card {
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: var(--transition);
+  text-decoration: none;
+  border: 1px solid;
+}
+
+.ott-launcher-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+.ott-launcher-card.netflix {
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.25) 0%, #111 100%);
+  border-color: rgba(229, 9, 20, 0.5);
+}
+
+.ott-launcher-card.hotstar {
+  background: linear-gradient(135deg, rgba(12, 84, 224, 0.25) 0%, #0d1527 100%);
+  border-color: rgba(12, 84, 224, 0.5);
+}
+
+.ott-launcher-card.prime {
+  background: linear-gradient(135deg, rgba(0, 168, 225, 0.25) 0%, #0c1824 100%);
+  border-color: rgba(0, 168, 225, 0.5);
+}
+
+.ott-launcher-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ott-launcher-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ott-launcher-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.ott-launch-action-btn {
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: var(--transition);
+}
+
+.ott-launcher-card:hover .ott-launch-action-btn {
+  background: #fff;
+  color: #000;
+}
+
+/* OTT Content Card */
+.ott-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.ott-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-focus);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+.ott-poster-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  background: #111;
+  overflow: hidden;
+}
+
+.ott-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ott-card:hover .ott-poster {
+  transform: scale(1.05);
+}
+
+.ott-platform-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ott-platform-badge.netflix {
+  background: #e50914;
+}
+
+.ott-platform-badge.hotstar {
+  background: #0c54e0;
+}
+
+.ott-platform-badge.prime {
+  background: #00a8e1;
+}
+
+.ott-platform-badge.free_ott {
+  background: #10b981;
+}
+
+.ott-rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fbbf24;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.ott-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.ott-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.ott-genres-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ott-genre-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border-radius: 4px;
+}
+
+.ott-overview {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ott-actions-row {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ott-btn-trailer {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text-main);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: var(--transition);
+}
+
+.ott-btn-trailer:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.ott-btn-watch {
+  flex: 1;
+  background: var(--accent-primary);
+  border: none;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.ott-btn-watch:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+
+/* ==========================================================================
+   Cinema Video Highlights & Trailer Modal Styles
+   ========================================================================== */
+
+.modal-cinema-card {
+  max-width: 880px !important;
+  width: 95% !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #090b10 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: var(--radius-xl) !important;
+}
+
+.modal-cinema-card .modal-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.modal-cinema-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-embed-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  position: relative;
+}
+
+.video-embed-container iframe,
+.video-embed-container video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.modal-cinema-info {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #090b10;
+}
+
+.modal-cinema-desc {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.modal-cinema-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 600px) {
+  .cricket-score-ticker {
+    grid-template-columns: 1fr;
+  }
+  .ott-hub-header {
+    grid-template-columns: 1fr;
+  }
+}
