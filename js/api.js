@@ -64,6 +64,10 @@ const API = {
       }
     }
 
+    if (!this.isLoaded) {
+      await this.loadPlaylist(this.currentPresetId || 'index');
+    }
+
     return {
       status: this.isLoaded ? 'ready' : 'loading',
       currentPresetId: this.currentPresetId,
@@ -235,6 +239,9 @@ const API = {
         this.isNodeServer = false;
       }
     }
+    if (!this.isLoaded) {
+      await this.loadPlaylist(this.currentPresetId || 'index');
+    }
     return this.staticCategories;
   },
 
@@ -246,6 +253,9 @@ const API = {
       } catch (e) {
         this.isNodeServer = false;
       }
+    }
+    if (!this.isLoaded) {
+      await this.loadPlaylist(this.currentPresetId || 'index');
     }
     return this.staticCountries;
   },
@@ -267,6 +277,10 @@ const API = {
       } catch (e) {
         this.isNodeServer = false;
       }
+    }
+
+    if (!this.isLoaded) {
+      await this.loadPlaylist(this.currentPresetId || 'index');
     }
 
     // Client-side filtering & pagination

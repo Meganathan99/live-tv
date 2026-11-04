@@ -26,6 +26,12 @@ window.App = {
     this.setupUIEvents();
     this.setupKeyboardShortcuts();
     
+    try {
+      await API.loadPlaylist('index');
+    } catch (e) {
+      console.warn('Playlist preload note:', e);
+    }
+
     await this.fetchServerStatus();
     await this.fetchMetadata();
     await this.loadChannels();
