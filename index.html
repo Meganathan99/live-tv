@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamOrbit Live TV — Global IPTV Player</title>
+  <meta name="description" content="Free Online Live TV Streaming site powered by iptv-org. Watch over 11,000+ TV channels from around the world.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📺</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- HLS.js for Live Stream Playback -->
+  <script src="vendor/hls.min.js"></script>
+</head>
+<body>
+
+  <!-- Top App Header -->
+  <header class="app-header">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <button id="btn-sidebar-toggle" class="btn-icon sidebar-toggle-btn" style="display: none;" title="Toggle Sidebar">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+
+      <div class="brand-container" id="brand-logo-btn">
+        <div class="brand-logo-icon">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+        </div>
+        <div class="brand-title-wrap">
+          <div class="brand-title">
+            StreamOrbit
+            <span class="live-pill"><span class="live-pulse-dot"></span> LIVE</span>
+          </div>
+          <div class="brand-subtitle" id="header-stats-text">11,000+ Global Channels</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="header-search-wrap">
+      <span class="search-icon-left">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </span>
+      <input type="text" id="global-search-input" class="search-input-box" placeholder="Search 11,000+ channels by name, country, category... (Press / to search)" autocomplete="off">
+      <button id="search-clear-btn" class="search-clear-btn" title="Clear search">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+
+    <!-- Right Header Actions -->
+    <div class="header-actions">
+      <!-- Playlist Selector -->
+      <div class="playlist-selector-wrap" title="Switch Playlist source">
+        <select id="playlist-preset-select" class="custom-select">
+          <option value="index" selected>📺 Main (index.m3u)</option>
+          <option value="news">📰 News Channels</option>
+          <option value="sports">⚽ Sports Channels</option>
+          <option value="movies">🎬 Movies Channels</option>
+          <option value="animation">🎨 Animation</option>
+          <option value="music">🎵 Music Channels</option>
+          <option value="entertainment">🍿 Entertainment</option>
+          <option value="kids">🧸 Kids Channels</option>
+          <option value="us">🇺🇸 United States</option>
+          <option value="uk">🇬🇧 United Kingdom</option>
+          <option value="in">🇮🇳 India</option>
+          <option value="ca">🇨🇦 Canada</option>
+          <option value="fr">🇫🇷 France</option>
+          <option value="de">🇩🇪 Germany</option>
+          <option value="es">🇪🇸 Spain</option>
+          <option value="custom">🔗 Custom URL / File...</option>
+        </select>
+      </div>
+
+      <!-- Proxy Mode Switcher -->
+      <button id="proxy-mode-toggle" class="proxy-badge-toggle" title="Click to cycle proxy modes: Auto (CORS bypass fallback) / Always Proxy / Direct">
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        <span id="proxy-mode-text">Proxy: Auto</span>
+      </button>
+
+      <!-- Refresh Playlist -->
+      <button id="btn-refresh-playlist" class="btn-icon" title="Reload / Refresh current playlist">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+      </button>
+
+      <!-- Keyboard Shortcuts Help -->
+      <button id="btn-help-shortcuts" class="btn-icon" title="Keyboard Shortcuts (?)">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="app-container">
+    
+    <!-- Left Navigation Sidebar -->
+    <aside class="app-sidebar" id="app-sidebar">
+      
+      <!-- Primary Navigation -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Library</div>
+        <button class="nav-item-btn active" data-tab="all">
+          <div class="nav-item-content">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+            <span>All Channels</span>
+          </div>
+          <span class="nav-badge" id="nav-count-all">-</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="favorites">
+          <div class="nav-item-content">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="color: #fbbf24;"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <span>Favorites</span>
+          </div>
+          <span class="nav-badge" id="nav-count-favs">0</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="history">
+          <div class="nav-item-content">
+            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>History</span>
+          </div>
+          <span class="nav-badge" id="nav-count-history">0</span>
+        </button>
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">
+          <span>Categories</span>
+          <span id="categories-summary-count" style="font-weight: 500;">-</span>
+        </div>
+        <input type="text" id="category-filter-search" class="filter-search-box" placeholder="Filter categories...">
+        <div class="pills-grid" id="categories-pills-list">
+          <button class="pill-filter active" data-category="All">All</button>
+          <!-- Dynamic categories populated here -->
+        </div>
+      </div>
+
+      <!-- Countries Filter -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">
+          <span>Countries</span>
+          <span id="countries-summary-count" style="font-weight: 500;">-</span>
+        </div>
+        <input type="text" id="country-filter-search" class="filter-search-box" placeholder="Filter countries...">
+        <div class="pills-grid" id="countries-pills-list">
+          <button class="pill-filter active" data-country="ALL">🌐 All</button>
+          <!-- Dynamic countries populated here -->
+        </div>
+      </div>
+
+      <!-- Quality Filter -->
+      <div class="sidebar-section">
+        <div class="sidebar-title">Video Quality</div>
+        <div class="pills-grid" id="quality-pills-list">
+          <button class="pill-filter active" data-quality="ALL">Any Quality</button>
+          <button class="pill-filter" data-quality="4K">✨ 4K / UHD</button>
+          <button class="pill-filter" data-quality="1080P">Full HD (1080p)</button>
+          <button class="pill-filter" data-quality="720P">HD (720p)</button>
+          <button class="pill-filter" data-quality="480P">SD (480p)</button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="app-main">
+
+      <!-- Live Video Player Area -->
+      <section class="player-wrapper" id="player-wrapper">
+        <div class="video-screen-container" id="video-screen-container">
+          
+          <!-- Native HTML5 Video Element -->
+          <video id="video-player" playsinline preload="auto"></video>
+
+          <!-- Top HUD Overlay (Hover) -->
+          <div class="player-hud-top" id="player-hud-top">
+            <div class="hud-channel-info">
+              <img id="hud-channel-logo" class="hud-channel-logo" src="" alt="logo" style="display: none;">
+              <div>
+                <div class="hud-channel-title" id="hud-channel-name">Select a Channel to Watch Live</div>
+                <div class="hud-meta-tags" id="hud-meta-tags">
+                  <span class="live-pill"><span class="live-pulse-dot"></span> LIVE</span>
+                  <span class="tag-badge" id="hud-tag-category">IPTV</span>
+                  <span class="tag-badge" id="hud-tag-country">Global</span>
+                  <span class="tag-badge tag-quality" id="hud-tag-quality">Auto</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 8px;">
+              <button id="btn-toggle-diagnostics" class="btn-icon" title="Stream Technical Info / Diagnostics">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Status / Spinner / Error Overlay -->
+          <div class="player-status-overlay" id="player-status-overlay">
+            <div class="spinner" id="player-spinner" style="display: none;"></div>
+            <div class="status-message" id="player-status-text">Welcome to StreamOrbit Live TV</div>
+            <div class="status-sub" id="player-status-sub">Pick any channel from the directory below to start watching live broadcast.</div>
+            <div class="status-actions" id="player-status-actions" style="display: none;">
+              <button id="btn-retry-stream" class="btn-primary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Retry Stream
+              </button>
+              <button id="btn-try-proxy" class="btn-primary" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                ⚡ Switch to Proxy Bypass
+              </button>
+              <button id="btn-open-vlc-overlay" class="btn-primary" style="background: #374151;">
+                Open in External VLC
+              </button>
+            </div>
+          </div>
+
+          <!-- Bottom Control Bar (Hover) -->
+          <div class="player-controls-bottom" id="player-controls-bottom">
+            <div class="controls-left">
+              <!-- Play / Pause -->
+              <button id="ctrl-btn-play" class="control-btn" title="Play/Pause (Space)">
+                <svg id="icon-play" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg id="icon-pause" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+
+              <!-- Prev Channel -->
+              <button id="ctrl-btn-prev" class="control-btn" title="Previous Channel ([)">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+              </button>
+
+              <!-- Next Channel -->
+              <button id="ctrl-btn-next" class="control-btn" title="Next Channel (])">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+              </button>
+
+              <!-- Volume Container -->
+              <div class="volume-container">
+                <button id="ctrl-btn-mute" class="control-btn" title="Mute/Unmute (M)">
+                  <svg id="icon-vol-high" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                  <svg id="icon-vol-mute" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="display: none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                </button>
+                <input type="range" id="ctrl-volume-slider" class="volume-slider" min="0" max="1" step="0.05" value="1" title="Volume">
+              </div>
+
+              <span class="live-pill" style="margin-left: 6px;"><span class="live-pulse-dot"></span> LIVE</span>
+            </div>
+
+            <div class="controls-right">
+              <!-- Quality Picker -->
+              <select id="ctrl-quality-select" class="custom-select" style="padding: 4px 8px; font-size: 0.75rem;" title="Stream Resolution">
+                <option value="-1">Quality: Auto</option>
+              </select>
+
+              <!-- External Player Options Dropdown -->
+              <div style="position: relative;">
+                <button id="ctrl-btn-external" class="control-btn" title="Open in External Player (VLC, PotPlayer, etc.)">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </button>
+              </div>
+
+              <!-- Picture in Picture -->
+              <button id="ctrl-btn-pip" class="control-btn" title="Picture-in-Picture (P)">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 7h-8v6h8V7zm2-4H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/></svg>
+              </button>
+
+              <!-- Theater Mode -->
+              <button id="ctrl-btn-theater" class="control-btn" title="Cinema / Theater Mode (T)">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+              </button>
+
+              <!-- Fullscreen -->
+              <button id="ctrl-btn-fullscreen" class="control-btn" title="Fullscreen (F)">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Technical Diagnostics Box (Collapsible) -->
+        <div class="diagnostics-box" id="diagnostics-box">
+          <div class="diag-item"><span class="diag-label">Engine:</span> <span class="diag-val" id="diag-engine">HLS.js / HTML5</span></div>
+          <div class="diag-item"><span class="diag-label">Current Res:</span> <span class="diag-val" id="diag-res">-</span></div>
+          <div class="diag-item"><span class="diag-label">Bitrate:</span> <span class="diag-val" id="diag-bitrate">-</span></div>
+          <div class="diag-item"><span class="diag-label">Buffer Length:</span> <span class="diag-val" id="diag-buffer">-</span></div>
+          <div class="diag-item"><span class="diag-label">Dropped Frames:</span> <span class="diag-val" id="diag-dropped">0</span></div>
+          <div class="diag-item"><span class="diag-label">Mode:</span> <span class="diag-val" id="diag-mode">Direct</span></div>
+          <div class="diag-item" style="flex: 1 1 100%;"><span class="diag-label">Stream Source:</span> <span class="diag-val" id="diag-url" style="word-break: break-all;">-</span></div>
+        </div>
+
+        <!-- Under Player Details Bar -->
+        <div class="player-details-bar">
+          <div class="active-ch-left">
+            <div id="active-ch-logo-wrap" class="card-logo-wrap" style="width: 46px; height: 46px;">
+              <span id="active-ch-fallback-logo" class="card-fallback-logo">TV</span>
+              <img id="active-ch-logo" class="card-logo" src="" alt="logo" style="display: none;">
+            </div>
+            <div class="active-ch-info">
+              <div class="active-ch-name">
+                <span id="active-ch-name">No Channel Selected</span>
+                <span id="active-ch-flag">🌐</span>
+              </div>
+              <div class="active-ch-tags">
+                <span id="active-ch-country">Global</span>
+                <span>•</span>
+                <span id="active-ch-category">General</span>
+                <span>•</span>
+                <span id="active-ch-quality-tag" class="tag-badge">Auto</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="active-ch-actions">
+            <!-- Favorite button -->
+            <button id="btn-favorite-active" class="btn-icon" title="Add to Favorites">
+              <svg id="icon-fav-active" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            </button>
+
+            <!-- Copy Stream URL -->
+            <button id="btn-copy-stream-url" class="btn-icon" title="Copy Direct Stream URL">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            </button>
+
+            <!-- Open in VLC -->
+            <button id="btn-open-vlc" class="btn-icon" title="Open Stream in VLC Player">
+              <span style="font-weight: 800; font-size: 0.72rem; color: #f97316;">VLC</span>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Channel Directory Header & Filter Status -->
+      <section class="directory-section">
+        
+        <div class="directory-header">
+          <div class="directory-title-wrap">
+            <h2 class="directory-title" id="directory-heading">All Channels</h2>
+            <span class="directory-count" id="directory-total-badge">Loading channels...</span>
+          </div>
+
+          <div class="directory-filters-active">
+            <!-- Reset Filters -->
+            <button id="btn-clear-filters" class="btn-primary" style="background: rgba(255, 255, 255, 0.08); display: none;">
+              ✕ Clear Filters
+            </button>
+
+            <!-- Sorting Select -->
+            <select id="sort-channels-select" class="custom-select">
+              <option value="default">Sort: Default</option>
+              <option value="name_asc">Name: A to Z</option>
+              <option value="name_desc">Name: Z to A</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Channels Grid -->
+        <div class="channels-grid" id="channels-grid">
+          <!-- Dynamic Channel Cards rendered here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="channels-empty-state" style="display: none; text-align: center; padding: 48px 20px;">
+          <div style="font-size: 3rem; margin-bottom: 12px;">📺</div>
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 6px;">No channels found</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Try adjusting your search terms or clearing your active category/country filters.</p>
+          <button id="btn-empty-reset" class="btn-primary">Reset Filters</button>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-container" id="pagination-container" style="display: none;">
+          <button id="btn-page-prev" class="page-btn">← Previous</button>
+          <span class="page-info" id="pagination-info">Page 1 of 1</span>
+          <button id="btn-page-next" class="page-btn">Next →</button>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Custom Playlist Modal -->
+  <div class="modal-backdrop" id="modal-custom-playlist">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Load Custom Playlist</h3>
+        <button class="modal-close-btn" id="modal-close-playlist">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">
+        Paste any direct M3U / M3U8 playlist URL or select one of the official iptv-org playlists:
+      </p>
+      <input type="url" id="custom-playlist-input" class="search-input-box" placeholder="https://example.com/playlist.m3u" style="border-radius: var(--radius-md);">
+      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+        <button id="btn-cancel-custom-playlist" class="btn-primary" style="background: rgba(255,255,255,0.1);">Cancel</button>
+        <button id="btn-submit-custom-playlist" class="btn-primary">Load Playlist</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <div class="modal-backdrop" id="modal-shortcuts">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Keyboard Shortcuts</h3>
+        <button class="modal-close-btn" id="modal-close-shortcuts">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </div>
+      <div class="shortcut-grid">
+        <div class="shortcut-item"><span>Play / Pause</span> <kbd class="key-kbd">Space</kbd></div>
+        <div class="shortcut-item"><span>Toggle Fullscreen</span> <kbd class="key-kbd">F</kbd></div>
+        <div class="shortcut-item"><span>Mute / Unmute</span> <kbd class="key-kbd">M</kbd></div>
+        <div class="shortcut-item"><span>Theater Mode</span> <kbd class="key-kbd">T</kbd></div>
+        <div class="shortcut-item"><span>Picture-in-Picture</span> <kbd class="key-kbd">P</kbd></div>
+        <div class="shortcut-item"><span>Search Channels</span> <kbd class="key-kbd">/</kbd></div>
+        <div class="shortcut-item"><span>Next Channel</span> <kbd class="key-kbd">]</kbd></div>
+        <div class="shortcut-item"><span>Previous Channel</span> <kbd class="key-kbd">[</kbd></div>
+        <div class="shortcut-item"><span>Volume Up</span> <kbd class="key-kbd">↑</kbd></div>
+        <div class="shortcut-item"><span>Volume Down</span> <kbd class="key-kbd">↓</kbd></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

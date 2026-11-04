@@ -1,0 +1,5 @@
+node_modules/
+cache/*.m3u
+*.log
+.DS_Store
+Thumbs.db
