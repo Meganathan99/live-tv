@@ -45,6 +45,7 @@ const Player = {
     // Play / Pause toggle
     document.getElementById('ctrl-btn-play')?.addEventListener('click', () => this.togglePlay());
     video.addEventListener('click', () => this.togglePlay());
+    document.getElementById('player-radio-visualizer')?.addEventListener('click', () => this.togglePlay());
 
     video.addEventListener('play', () => {
       document.getElementById('icon-play').style.display = 'none';
@@ -71,12 +72,19 @@ const Player = {
       const val = parseFloat(e.target.value);
       video.volume = val;
       video.muted = (val === 0);
+      if (this.audio) {
+        this.audio.volume = val;
+        this.audio.muted = (val === 0);
+      }
       localStorage.setItem('iptv_volume', val);
       this.updateVolumeIcons();
     });
 
     document.getElementById('ctrl-btn-mute')?.addEventListener('click', () => {
       video.muted = !video.muted;
+      if (this.audio) {
+        this.audio.muted = video.muted;
+      }
       this.updateVolumeIcons();
     });
 
@@ -172,12 +180,22 @@ const Player = {
   },
 
   updateVolumeIcons() {
-    const isMuted = this.video.muted || this.video.volume === 0;
+    const isMuted = (this.currentChannel?.isRadio && this.audio && this.audio.src)
+      ? (this.audio.muted || this.audio.volume === 0)
+      : (this.video.muted || this.video.volume === 0);
     document.getElementById('icon-vol-high').style.display = isMuted ? 'none' : 'block';
     document.getElementById('icon-vol-mute').style.display = isMuted ? 'block' : 'none';
   },
 
   togglePlay() {
+    if (this.currentChannel?.isRadio && this.audio && this.audio.src) {
+      if (this.audio.paused) {
+        this.audio.play().catch(e => console.warn('Play prevented:', e));
+      } else {
+        this.audio.pause();
+      }
+      return;
+    }
     if (!this.video) return;
     if (this.video.paused) {
       this.video.play().catch(e => console.warn('Play prevented:', e));
@@ -790,3 +808,12 @@ const Player = {
     window.location.href = vlcProtocol;
   }
 };
+
+
+// Export Player globally
+if (typeof window !== 'undefined') {
+  window.Player = Player;
+}
+if (typeof module !== 'undefined') {
+  module.exports = Player;
+}

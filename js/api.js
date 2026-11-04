@@ -351,3 +351,12 @@ const API = {
     return `https://api.allorigins.win/raw?url=${encodeURIComponent(rawUrl)}`;
   }
 };
+
+
+// Export API globally
+if (typeof window !== 'undefined') {
+  window.API = API;
+}
+if (typeof module !== 'undefined') {
+  module.exports = API;
+}

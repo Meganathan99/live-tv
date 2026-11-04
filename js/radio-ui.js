@@ -154,8 +154,9 @@
 
         card.addEventListener('click', (e) => {
           e.preventDefault();
-          if (window.Player) {
-            window.Player.playChannel(station);
+          const p = window.Player || (typeof Player !== 'undefined' ? Player : null);
+          if (p) {
+            p.playChannel(station);
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
             document.querySelectorAll('.radio-station-card').forEach(c => {
