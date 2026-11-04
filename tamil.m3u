@@ -9,20 +9,50 @@ https://hls.rojatv.cloud/rojamovies/rojamovies/index.m3u8?origin=github.com/amaz
 https://segment.yuppcdn.net/140622/isaiaruvi/playlist.m3u8
 #EXTINF:-1 tvg-id="7SMusicTamilHits" tvg-name="7S Music (Tamil Hits)" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Popular Music",7S Music (Tamil Hits)
 https://mumt03.tangotv.in/Dsly5z3H7SMUSIC/index.m3u8
+#EXTINF:-1 tvg-id="KalaignarMurasuTVGoldenEraMoviesComedy" tvg-name="Kalaignar Murasu TV (Golden Era Movies & Comedy)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Murasu_TV.png" group-title="Old is Gold (Classics)",Kalaignar Murasu TV (Golden Era Movies & Comedy)
+https://yuppmedtaorire.akamaized.net/v1/master/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/murasu_nim_https/050522/murasu/playlist.m3u8
+#EXTINF:-1 tvg-id="MakkalTVTamilTraditionalCulturalHeritage" tvg-name="Makkal TV (Tamil Traditional & Cultural Heritage)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Makkal_TV.png" group-title="Old is Gold (Classics)",Makkal TV (Tamil Traditional & Cultural Heritage)
+https://mumbai-edge.smartplaytv.in/MakkalTV/index.m3u8
+#EXTINF:-1 tvg-id="PeppersTVClassicTamilEntertainment" tvg-name="Peppers TV (Classic Tamil Entertainment)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/eb/Peppers_TV_logo.png" group-title="Old is Gold (Classics)",Peppers TV (Classic Tamil Entertainment)
+https://cdn.pishow.tv/ott/live/1383/master.m3u8
+#EXTINF:-1 tvg-id="BSCOldClassicTamilMovies" tvg-name="BSC Old (Classic Tamil Movies)" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1792484379_bsc%20old%20logo.png" group-title="Old is Gold (Classics)",BSC Old (Classic Tamil Movies)
+https://app.ashokadigital.net/app/dd82e91b/index.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="APSTVGoldEvergreenTamilClassics" tvg-name="APS TV Gold (Evergreen Tamil Classics)" tvg-logo="https://apsgold-a1.tamilstream.in/apsgold/logo.png" group-title="Old is Gold (Classics)",APS TV Gold (Evergreen Tamil Classics)
+https://apsgold-a1.tamilstream.in/apsgold/apsgold/index.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="AnalaiExpressClassicVintageCinema" tvg-name="Analai Express Classic (Vintage Cinema)" tvg-logo="https://3.proxy.nellaiiptv.com/ANALAI_MOVIE/logo.png" group-title="Old is Gold (Classics)",Analai Express Classic (Vintage Cinema)
+https://3.proxy.nellaiiptv.com/ANALAI_MOVIE/index.m3u8?origin=github.com/amazeyourself&token=GTR
+#EXTINF:-1 tvg-id="VaanavilTVRetroMusicClassicShows" tvg-name="Vaanavil TV (Retro Music & Classic Shows)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Vaanavil_TV.png" group-title="Old is Gold (Classics)",Vaanavil TV (Retro Music & Classic Shows)
+https://mumt01.tangotv.in/O5aw8Zn3VAANAVILTV/index.m3u8
+#EXTINF:-1 tvg-id="ChithiramTVClassicCartoonsStories" tvg-name="Chithiram TV (Classic Cartoons & Stories)" tvg-logo="https://i.imgur.com/xv9cWSh.png" group-title="Old is Gold (Classics)",Chithiram TV (Classic Cartoons & Stories)
+https://cdn.pishow.tv/ott/live/1243/master.m3u8
+#EXTINF:-1 tvg-id="AaryaaTVTamilNostalgiaMelodies" tvg-name="Aaryaa TV (Tamil Nostalgia & Melodies)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/aryatvtamil.png" group-title="Old is Gold (Classics)",Aaryaa TV (Tamil Nostalgia & Melodies)
+https://stream.ottlive.co.in/aryatvtamil/index.m3u8
+#EXTINF:-1 tvg-id="UltimateTVEvergreenTamilHits" tvg-name="Ultimate TV (Evergreen Tamil Hits)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/utvtamil.png" group-title="Old is Gold (Classics)",Ultimate TV (Evergreen Tamil Hits)
+https://stream.ottlive.co.in/utvtamil/index.m3u8
+#EXTINF:-1 tvg-id="ThendralTVClassicTamilEntertainment" tvg-name="Thendral TV (Classic Tamil Entertainment)" tvg-logo="https://i.imgur.com/kQK80gB.png" group-title="Old is Gold (Classics)",Thendral TV (Classic Tamil Entertainment)
+https://hls.thendraltv.in/thendraltv_1210b43d/index.m3u8
+#EXTINF:-1 tvg-id="BharathiThiraiUlagamTVClassicCinema" tvg-name="Bharathi Thirai Ulagam TV (Classic Cinema)" tvg-logo="https://live1.sscloud7.com/live/bharathithiraiulagam/logo.png" group-title="Old is Gold (Classics)",Bharathi Thirai Ulagam TV (Classic Cinema)
+https://live1.sscloud7.com/live/bharathithiraiulagam/index.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="RetroMusicTamilIlaiyaraajaMSVSPBHits" tvg-name="Retro Music Tamil (Ilaiyaraaja, MSV, SPB Hits)" tvg-logo="https://sanplayout.xyz/live2/retromusichd/logo.png" group-title="Old is Gold (Classics)",Retro Music Tamil (Ilaiyaraaja, MSV, SPB Hits)
+https://sanplayout.xyz/live2/retromusichd/playlist.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="SooriyanTVCinemaNostalgicMovies" tvg-name="Sooriyan TV Cinema (Nostalgic Movies)" tvg-logo="https://live20.bozztv.com/giatv/giatv-Sooriyantv/logo.png" group-title="Old is Gold (Classics)",Sooriyan TV Cinema (Nostalgic Movies)
+https://live20.bozztv.com/giatv/giatv-Sooriyantv/Sooriyantv/playlist.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="RajMusixTamilClassic90s2000sHits" tvg-name="Raj Musix Tamil (Classic 90s/2000s Hits)" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_RAJ_MUSIX_TAMIL/images/LOGO_HD/image.png" group-title="Old is Gold (Classics)",Raj Musix Tamil (Classic 90s/2000s Hits)
+https://livestream.rajtv.tv/hlslive/Admin/px08241087/live/Raj_Musix/master_1.m3u8
+#EXTINF:-1 tvg-id="VasanthTVTraditionalTamilHeritage" tvg-name="Vasanth TV (Traditional Tamil Heritage)" tvg-logo="https://dtil.tmsimg.com/assets/s144068_ld_h15_aa.png?lock=720x540" group-title="Old is Gold (Classics)",Vasanth TV (Traditional Tamil Heritage)
+https://mumt04.tangotv.in/m18aqlK4VASANTHTV/index.m3u8
+#EXTINF:-1 tvg-id="VendharTVClassicDramaCulture" tvg-name="Vendhar TV (Classic Drama & Culture)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Vendhar_TV.png" group-title="Old is Gold (Classics)",Vendhar TV (Classic Drama & Culture)
+https://mumt04.tangotv.in/m18aqlK4VENDHARTV/index.m3u8
 #EXTINF:-1 tvg-id="ThiraiTVHD247Movies" tvg-name="Thirai TV HD (24/7 Movies)" tvg-logo="https://live.apcloud.in/thiraitv/thiraitvhd/logo.png" group-title="Movies",Thirai TV HD (24/7 Movies)
 https://live.apcloud.in/thiraitv/thiraitvhd/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="RojaMoviesLive" tvg-name="Roja Movies Live" tvg-logo="https://hls.rojatv.cloud/rojamovies/logo.png" group-title="Movies",Roja Movies Live
 https://hls.rojatv.cloud/rojamovies/rojamovies/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="SriVinayagaMoviesHD" tvg-name="Sri Vinayaga Movies HD" tvg-logo="https://1.proxy.nellaiiptv.com/srivinayagatv/logo.png" group-title="Movies",Sri Vinayaga Movies HD
 https://1.proxy.nellaiiptv.com/srivinayagatv/movies/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="BharathiThiraiUlagamTV" tvg-name="Bharathi Thirai Ulagam TV" tvg-logo="https://live1.sscloud7.com/live/bharathithiraiulagam/logo.png" group-title="Movies",Bharathi Thirai Ulagam TV
-https://live1.sscloud7.com/live/bharathithiraiulagam/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="TharunMoviesLive" tvg-name="Tharun Movies Live" tvg-logo="https://streaming.livebox.co.in/tharunmovies/logo.png" group-title="Movies",Tharun Movies Live
 https://streaming.livebox.co.in/tharunmovieshls/live.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="AnalaiExpressCinema" tvg-name="Analai Express Cinema" tvg-logo="https://3.proxy.nellaiiptv.com/MONTAMIL_CINEMA/logo.png" group-title="Movies",Analai Express Cinema
 https://3.proxy.nellaiiptv.com/MONTAMIL_CINEMA/index.m3u8?origin=github.com/amazeyourself&token=GTR
-#EXTINF:-1 tvg-id="SooriyanTVCinema" tvg-name="Sooriyan TV Cinema" tvg-logo="https://live20.bozztv.com/giatv/giatv-Sooriyantv/logo.png" group-title="Movies",Sooriyan TV Cinema
-https://live20.bozztv.com/giatv/giatv-Sooriyantv/Sooriyantv/playlist.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="ThiraiTVServer2" tvg-name="Thirai TV (Server 2)" tvg-logo="https://view.apserver.in/tmp_hls2/logo.png" group-title="Movies",Thirai TV (Server 2)
 https://view.apserver.in/tmp_hls2/thiraitv/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="ThiraiMusicHD" tvg-name="Thirai Music HD" tvg-logo="https://view.apserver.in/tmp_hls1/logo.png" group-title="Music",Thirai Music HD
@@ -35,14 +65,10 @@ https://mntv.livebox.co.in/musichls/live.m3u8?origin=github.com/amazeyourself
 https://server.sscloud7.in/isaihd/isaihd/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="PrimeMusicLive" tvg-name="Prime Music Live" tvg-logo="https://live.primestream.in/prime/music/logo.png" group-title="Music",Prime Music Live
 https://live.primestream.in/prime/music/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="RetroMusicTamil" tvg-name="Retro Music Tamil" tvg-logo="https://sanplayout.xyz/live2/retromusichd/logo.png" group-title="Music",Retro Music Tamil
-https://sanplayout.xyz/live2/retromusichd/playlist.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="DiamondMusicTV" tvg-name="Diamond Music TV" tvg-logo="https://real-vk.proxy.nellaiiptv.com/DIAMONDMUSIC/logo.png" group-title="Music",Diamond Music TV
 https://real-vk.proxy.nellaiiptv.com/DIAMONDMUSIC/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="EyeTamilMusic" tvg-name="Eye Tamil Music" tvg-logo="https://2.proxy.nellaiiptv.com/EyeMedia/music/logo.png" group-title="Music",Eye Tamil Music
 https://2.proxy.nellaiiptv.com/EyeMedia/music/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="RajMusixTamil" tvg-name="Raj Musix Tamil" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_RAJ_MUSIX_TAMIL/images/LOGO_HD/image.png" group-title="Music",Raj Musix Tamil
-https://livestream.rajtv.tv/hlslive/Admin/px08241087/live/Raj_Musix/master_1.m3u8
 #EXTINF:-1 tvg-id="IsaiSaralTV" tvg-name="Isai Saral TV" tvg-logo="https://srnet-bmlive-net.proxy.nellaiiptv.com/isaisaral/logo.png" group-title="Music",Isai Saral TV
 https://srnet-bmlive-net.proxy.nellaiiptv.com/isaisaral/mystream/playlist.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="PolimerNewsLive" tvg-name="Polimer News Live" tvg-logo="https://i.imgur.com/5u8pUqN.png" group-title="News",Polimer News Live
@@ -72,7 +98,7 @@ https://mumt05.tangotv.in/87NeALx2VALICHAMPLUS/index.m3u8
 #EXTINF:-1 tvg-id="MoonTV" tvg-name="Moon TV" tvg-logo="https://d1msejlow1t3l4.cloudfront.net/fta/moontv/playlist.m3u8" group-title="News",Moon TV
 https://d1msejlow1t3l4.cloudfront.net/fta/moontv/playlist.m3u8
 #EXTINF:-1 tvg-id="MNaduTV" tvg-name="M Nadu TV" tvg-logo="https://cloudcdnplayer.mslivestream.net/mslivecdn/mnadu/index.m3u8" group-title="News",M Nadu TV
-https://cloudcdnplayer.mslivestream.net/mslivecdn/mnadu/index.m3u8
+https://cloudcdnplayer.mslivecdn.net/mslivecdn/mnadu/index.m3u8
 #EXTINF:-1 tvg-id="SriSankaraTVTamil" tvg-name="Sri Sankara TV Tamil" tvg-logo="https://mumt05.tangotv.in/87NeALx2SRISANKARA/index.m3u8" group-title="Devotional",Sri Sankara TV Tamil
 https://mumt05.tangotv.in/87NeALx2SRISANKARA/index.m3u8
 #EXTINF:-1 tvg-id="SairamTVSaiBabaDevotional" tvg-name="Sairam TV (Sai Baba Devotional)" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Devotional",Sairam TV (Sai Baba Devotional)
@@ -107,12 +133,6 @@ https://mumt04.tangotv.in/m18aqlK4TAMILANTELEVISION/index.m3u8
 https://stream.apcloud.in/manishatv/manishatvstream/index.m3u8
 #EXTINF:-1 tvg-id="JTKTVTirunelveli" tvg-name="JTK TV Tirunelveli" tvg-logo="http://phoenixcreations.online/ott/joshuaott/uploads/1761369484_jtk.png" group-title="Tamil Local",JTK TV Tirunelveli
 https://ktismaservers.in:3346/live/jtktvlive.m3u8
-#EXTINF:-1 tvg-id="VaanavilTV" tvg-name="Vaanavil TV" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Vaanavil TV
-https://mumt01.tangotv.in/O5aw8Zn3VAANAVILTV/index.m3u8
-#EXTINF:-1 tvg-id="VasanthTV" tvg-name="Vasanth TV" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Vasanth TV
-https://mumt04.tangotv.in/m18aqlK4VASANTHTV/index.m3u8
-#EXTINF:-1 tvg-id="VendharTV" tvg-name="Vendhar TV" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Vendhar TV
-https://mumt04.tangotv.in/m18aqlK4VENDHARTV/index.m3u8
 #EXTINF:-1 tvg-id="ThanthiOne" tvg-name="Thanthi One" tvg-logo="https://i.imgur.com/smQKa2G.png" group-title="Tamil Local",Thanthi One
 https://mumt07.tangotv.in/zHjX9OFlTHANTHIONE/index.m3u8
 #EXTINF:-1 tvg-id="KTVHDVLCSatelliteFeed" tvg-name="KTV HD [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z1SEP.png?lock=720x540" group-title="Satellite Feeds (VLC)",KTV HD [VLC Satellite Feed]

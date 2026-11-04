@@ -288,6 +288,16 @@ const Player = {
     const name = (channel.name || '').toLowerCase();
     const group = (channel.group || '').toLowerCase();
 
+    if (name.includes('classic') || name.includes('old') || name.includes('retro') || name.includes('murasu') || name.includes('makkal') || name.includes('peppers') || group.includes('classic') || group.includes('gold')) {
+      return [
+        { name: 'Kalaignar Murasu TV', query: 'Kalaignar Murasu' },
+        { name: 'Makkal TV Heritage', query: 'Makkal TV' },
+        { name: 'Peppers TV Classic', query: 'Peppers TV' },
+        { name: 'BSC Old Movies', query: 'BSC Old' },
+        { name: 'Vaanavil TV Retro', query: 'Vaanavil TV' }
+      ];
+    }
+
     if (name.includes('ktv') || name.includes('thirai') || name.includes('movie') || name.includes('cinema') || group.includes('movie')) {
       return [
         { name: 'Thirai TV HD (24/7)', query: 'Thirai TV HD' },
