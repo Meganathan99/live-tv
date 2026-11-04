@@ -4,7 +4,24 @@
  */
 
 (function () {
-  if (typeof window === 'undefined') return;
+  const CRICKET_THUMB_SVG = "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E";
+  const OTT_POSTER_SVG = "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23111827'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E🎬%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23c4b5fd' font-family='sans-serif' font-size='16' font-weight='700'%3EOTT TITLE%3C/text%3E%3C/svg%3E";
+
+  window.handleImgFallback = function (img, type) {
+    if (!img) return;
+    img.onerror = null;
+    img.src = (type === 'ott') ? OTT_POSTER_SVG : CRICKET_THUMB_SVG;
+  };
+
+  window.handleLogoFallback = function (img) {
+    if (!img) return;
+    img.onerror = null;
+    img.style.display = 'none';
+    if (img.previousElementSibling) {
+      img.previousElementSibling.style.display = 'flex';
+    }
+  };
+  if (typeof window === "undefined") return;
 
   // Initialize Modal and Keyboard events when DOM is ready
   document.addEventListener('DOMContentLoaded', () => {
@@ -144,7 +161,7 @@
           <div class="card-top-row">
             <div class="card-logo-wrap">
               <span class="card-fallback-logo">🏏</span>
-              <img class="card-logo" src="${ch.logo}" alt="${ch.name}" loading="lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+              <img class="card-logo" src="${ch.logo}" alt="${ch.name}" loading="lazy" onerror="window.handleLogoFallback(this);">
             </div>
             <div class="card-badges-wrap">
               <span class="tag-badge" style="background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid rgba(239,68,68,0.4);">LIVE</span>
@@ -188,7 +205,7 @@
         card.className = 'highlight-card';
         card.innerHTML = `
           <div class="highlight-thumb-box">
-            <img class="highlight-thumb" src="${hl.thumb}" alt="${hl.title}" loading="lazy" onerror="this.src='${hl.fallbackThumb}';">
+            <img class="highlight-thumb" src="${hl.thumb}" alt="${hl.title}" loading="lazy" onerror="window.handleImgFallback(this, 'cricket');">
             <div class="highlight-play-overlay">
               <div class="highlight-play-btn-circle">
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -320,7 +337,7 @@
       card.className = 'ott-card';
       card.innerHTML = `
         <div class="ott-poster-wrap">
-          <img class="ott-poster" src="${item.poster}" alt="${item.title}" loading="lazy">
+          <img class="ott-poster" src="${item.poster}" alt="${item.title}" loading="lazy" onerror="window.handleImgFallback(this, 'ott');">
           <span class="ott-platform-badge ${item.platform}">${item.platformName}</span>
           <span class="ott-rating-badge">${item.rating}</span>
         </div>
@@ -371,7 +388,7 @@
           <div class="card-top-row">
             <div class="card-logo-wrap">
               <span class="card-fallback-logo">🎬</span>
-              <img class="card-logo" src="${ch.logo}" alt="${ch.name}" loading="lazy" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+              <img class="card-logo" src="${ch.logo}" alt="${ch.name}" loading="lazy" onerror="window.handleLogoFallback(this);">
             </div>
             <div class="card-badges-wrap">
               <span class="tag-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4);">FREE OTT</span>

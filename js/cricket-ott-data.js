@@ -114,7 +114,7 @@ const CRICKET_DATA = {
       heroMoments: "Suryakumar Yadav boundary catch, Hardik Pandya final over defence, Rohit Sharma emotional win!",
       date: "June 29, 2024",
       thumb: "https://images.icc-cricket.com/image/upload/t_ratio16_9-size30/prd/assets/events/t20-world-cup/2024/news/final_moments.jpg",
-      fallbackThumb: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&q=80",
+      fallbackThumb: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E",
       videoId: "m3_9_w8UoDk",
       embedUrl: "https://www.youtube-nocookie.com/embed/m3_9_w8UoDk?autoplay=1"
     },
@@ -128,6 +128,7 @@ const CRICKET_DATA = {
       heroMoments: "Unbelievable back-foot straight six off Haris Rauf, 16 needed off 6 balls, iconic MCG chase!",
       date: "Oct 23, 2022",
       thumb: "https://images.unsplash.com/photo-1531415074868-036b107e775a?w=800&q=80",
+      fallbackThumb: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E",
       videoId: "5jX0rKfZvL0",
       embedUrl: "https://www.youtube-nocookie.com/embed/5jX0rKfZvL0?autoplay=1"
     },
@@ -141,6 +142,7 @@ const CRICKET_DATA = {
       heroMoments: "29 runs in one over off Mitchell Starc, 8 massive sixes, fastest fifty of the tournament!",
       date: "June 24, 2024",
       thumb: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&q=80",
+      fallbackThumb: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E",
       videoId: "v6C3O_x3aX0",
       embedUrl: "https://www.youtube-nocookie.com/embed/v6C3O_x3aX0?autoplay=1"
     },
@@ -154,6 +156,7 @@ const CRICKET_DATA = {
       heroMoments: "28 needed off 5 balls, Rinku Singh hits 6, 6, 6, 6, 6 to pull off the greatest finish in T20 history!",
       date: "April 9, 2023",
       thumb: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=800&q=80",
+      fallbackThumb: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E",
       videoId: "pXl8xUeG_1w",
       embedUrl: "https://www.youtube-nocookie.com/embed/pXl8xUeG_1w?autoplay=1"
     },
@@ -167,6 +170,7 @@ const CRICKET_DATA = {
       heroMoments: "Rishabh Pant 89* on Day 5, Shubman Gill 91, chasing 328 to seal historic 2-1 series victory!",
       date: "Jan 19, 2021",
       thumb: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=800&q=80",
+      fallbackThumb: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E",
       videoId: "QnO7vT4K1qY",
       embedUrl: "https://www.youtube-nocookie.com/embed/QnO7vT4K1qY?autoplay=1"
     },
@@ -180,6 +184,7 @@ const CRICKET_DATA = {
       heroMoments: "6, 4, 2, 4 off Jaydev Unadkat in the final over, Dhoni takes CSK over the line!",
       date: "April 21, 2022",
       thumb: "https://images.unsplash.com/photo-1531415074868-036b107e775a?w=800&q=80",
+      fallbackThumb: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E",
       videoId: "LkJ7hG2p3Q8",
       embedUrl: "https://www.youtube-nocookie.com/embed/LkJ7hG2p3Q8?autoplay=1"
     },
@@ -193,6 +198,7 @@ const CRICKET_DATA = {
       heroMoments: "Swinging yorkers, dismissing Roy, Root, Bairstow for ducks, skittling England for 110!",
       date: "July 12, 2022",
       thumb: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&q=80",
+      fallbackThumb: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E",
       videoId: "YmB7nK4p9Qw",
       embedUrl: "https://www.youtube-nocookie.com/embed/YmB7nK4p9Qw?autoplay=1"
     },
@@ -206,6 +212,7 @@ const CRICKET_DATA = {
       heroMoments: "Chasing 351 against Australia's peak bowling line-up, unforgettable solo masterclass!",
       date: "Nov 5, 2009",
       thumb: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=800&q=80",
+      fallbackThumb: "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%230f172a'/%3E%3Ctext x='50%25' y='45%25' dominant-baseline='middle' text-anchor='middle' font-size='56'%3E🏏%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%2334d399' font-family='sans-serif' font-size='18' font-weight='700'%3ECRICKET HIGHLIGHTS%3C/text%3E%3C/svg%3E",
       videoId: "D8_u_6WJ1m0",
       embedUrl: "https://www.youtube-nocookie.com/embed/D8_u_6WJ1m0?autoplay=1"
     }
