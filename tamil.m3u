@@ -17,9 +17,9 @@ https://mumbai-edge.smartplaytv.in/MakkalTV/index.m3u8
 https://cdn.pishow.tv/ott/live/1383/master.m3u8
 #EXTINF:-1 tvg-id="BSCOldClassicTamilMovies" tvg-name="BSC Old (Classic Tamil Movies)" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1792484379_bsc%20old%20logo.png" group-title="Old is Gold (Classics)",BSC Old (Classic Tamil Movies)
 https://app.ashokadigital.net/app/dd82e91b/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="APSTVGoldEvergreenTamilClassics" tvg-name="APS TV Gold (Evergreen Tamil Classics)" tvg-logo="https://apsgold-a1.tamilstream.in/apsgold/logo.png" group-title="Old is Gold (Classics)",APS TV Gold (Evergreen Tamil Classics)
+#EXTINF:-1 tvg-id="APSTVGoldEvergreenTamilClassics" tvg-name="APS TV Gold (Evergreen Tamil Classics)" tvg-logo="https://i.imgur.com/kQK80gB.png" group-title="Old is Gold (Classics)",APS TV Gold (Evergreen Tamil Classics)
 https://apsgold-a1.tamilstream.in/apsgold/apsgold/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="AnalaiExpressClassicVintageCinema" tvg-name="Analai Express Classic (Vintage Cinema)" tvg-logo="https://3.proxy.nellaiiptv.com/ANALAI_MOVIE/logo.png" group-title="Old is Gold (Classics)",Analai Express Classic (Vintage Cinema)
+#EXTINF:-1 tvg-id="AnalaiExpressClassicVintageCinema" tvg-name="Analai Express Classic (Vintage Cinema)" tvg-logo="https://i.imgur.com/xv9cWSh.png" group-title="Old is Gold (Classics)",Analai Express Classic (Vintage Cinema)
 https://3.proxy.nellaiiptv.com/ANALAI_MOVIE/index.m3u8?origin=github.com/amazeyourself&token=GTR
 #EXTINF:-1 tvg-id="VaanavilTVRetroMusicClassicShows" tvg-name="Vaanavil TV (Retro Music & Classic Shows)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Vaanavil_TV.png" group-title="Old is Gold (Classics)",Vaanavil TV (Retro Music & Classic Shows)
 https://mumt01.tangotv.in/O5aw8Zn3VAANAVILTV/index.m3u8
@@ -31,7 +31,7 @@ https://stream.ottlive.co.in/aryatvtamil/index.m3u8
 https://stream.ottlive.co.in/utvtamil/index.m3u8
 #EXTINF:-1 tvg-id="ThendralTVClassicTamilEntertainment" tvg-name="Thendral TV (Classic Tamil Entertainment)" tvg-logo="https://i.imgur.com/kQK80gB.png" group-title="Old is Gold (Classics)",Thendral TV (Classic Tamil Entertainment)
 https://hls.thendraltv.in/thendraltv_1210b43d/index.m3u8
-#EXTINF:-1 tvg-id="BharathiThiraiUlagamTVClassicCinema" tvg-name="Bharathi Thirai Ulagam TV (Classic Cinema)" tvg-logo="https://live1.sscloud7.com/live/bharathithiraiulagam/logo.png" group-title="Old is Gold (Classics)",Bharathi Thirai Ulagam TV (Classic Cinema)
+#EXTINF:-1 tvg-id="BharathiThiraiUlagamTVClassicCinema" tvg-name="Bharathi Thirai Ulagam TV (Classic Cinema)" tvg-logo="https://i.imgur.com/0uB0k6K.png" group-title="Old is Gold (Classics)",Bharathi Thirai Ulagam TV (Classic Cinema)
 https://live1.sscloud7.com/live/bharathithiraiulagam/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="RetroMusicTamilIlaiyaraajaMSVSPBHits" tvg-name="Retro Music Tamil (Ilaiyaraaja, MSV, SPB Hits)" tvg-logo="https://sanplayout.xyz/live2/retromusichd/logo.png" group-title="Old is Gold (Classics)",Retro Music Tamil (Ilaiyaraaja, MSV, SPB Hits)
 https://sanplayout.xyz/live2/retromusichd/playlist.m3u8?origin=github.com/amazeyourself
