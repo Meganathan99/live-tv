@@ -161,3 +161,93 @@ http://ptuf.ridsys.in/riptv/live/COLORS_TAMIL/index.m3u8
 http://ptuf.ridsys.in/riptv/live/KALAIGNAR_TV/index.m3u8
 #EXTINF:-1 tvg-id="JayaTVHDVLCSatelliteFeed" tvg-name="Jaya TV HD [VLC Satellite Feed]" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Satellite Feeds (VLC)",Jaya TV HD [VLC Satellite Feed]
 http://ptuf.ridsys.in/riptv/live/JAYA_TV/index.m3u8
+#EXTINF:-1 tvg-id="RajTVHD" tvg-name="Raj TV HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Raj_TV_Logo.png/220px-Raj_TV_Logo.png" group-title="Entertainment",Raj TV HD
+https://livestream.rajtv.tv/hlslive/Admin/px08241087/live/RAJTV/master_1.m3u8
+#EXTINF:-1 tvg-id="RajDigitalPlusMoviesHD" tvg-name="Raj Digital Plus (Tamil Cinema HD)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Raj_Digital_Plus_logo.png/220px-Raj_Digital_Plus_logo.png" group-title="Popular Movies",Raj Digital Plus (Tamil Cinema HD)
+https://livestream.rajtv.tv/hlslive/Admin/px08241087/live/RajTV_Digital_plus/master_1.m3u8
+#EXTINF:-1 tvg-id="PolimerTVHD" tvg-name="Polimer TV HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/4e/Polimer_TV_logo.png" group-title="Entertainment",Polimer TV HD
+https://cdn.pishow.tv/ott/live/1241/master.m3u8
+#EXTINF:-1 tvg-id="PuthuyugamTV" tvg-name="Puthuyugam TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Puthuyugam_TV_logo.png/220px-Puthuyugam_TV_logo.png" group-title="Entertainment",Puthuyugam TV
+https://mumt04.tangotv.in/m18aqlK4PUTHUYUGAMTV/index.m3u8
+#EXTINF:-1 tvg-id="StarVijayUK" tvg-name="Star Vijay UK (Tamil Entertainment)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Star_Vijay_logo.png/220px-Star_Vijay_logo.png" group-title="Entertainment",Star Vijay UK (Tamil Entertainment)
+https://da86m1sqpm3o0.cloudfront.net/28072023/smil:starvijayuk.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="SirippoliTVComedy" tvg-name="Sirippoli TV (Tamil Comedy 24/7)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Sirippoli_TV_logo.png/220px-Sirippoli_TV_logo.png" group-title="Old is Gold (Classics)",Sirippoli TV (Tamil Comedy 24/7)
+https://segment.yuppcdn.net/240122/siripoli/playlist.m3u8
+#EXTINF:-1 tvg-id="ThalaaTVTamilMovies" tvg-name="Thalaa TV (Tamil Cinema)" tvg-logo="https://streams2.sofast.tv/assets/channel_logos/thalaa_tv.png" group-title="Movies",Thalaa TV (Tamil Cinema)
+https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/2069c593-3c07-4d62-9d44-746be5c3a5d6/manifest.m3u8
+#EXTINF:-1 tvg-id="DDTamilHD" tvg-name="DD Tamil HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/DD_Tamil_Logo_2024.png/220px-DD_Tamil_Logo_2024.png" group-title="General",DD Tamil HD
+https://cdn.pishow.tv/ott/live/1737/master.m3u8
+#EXTINF:-1 tvg-id="DDSportsHD" tvg-name="DD Sports HD (Tamil Feeds)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/DD_Sports_logo.png/220px-DD_Sports_logo.png" group-title="Sports",DD Sports HD (Tamil Feeds)
+https://cdn.pishow.tv/ott/live/1161/master.m3u8
+#EXTINF:-1 tvg-id="DheeranTVRegional" tvg-name="Dheeran TV (Tamil Regional)" tvg-logo="https://i.imgur.com/kQK80gB.png" group-title="Regional & Local",Dheeran TV (Tamil Regional)
+https://live.we2live.in/dheerantv/dheerantv/playlist.m3u8
+#EXTINF:-1 tvg-id="KalaignarSeithigalNews" tvg-name="Kalaignar Seithigal (24x7 Tamil News)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/e/ee/Kalaignar_Seithigal_logo.png/220px-Kalaignar_Seithigal_logo.png" group-title="News",Kalaignar Seithigal (24x7 Tamil News)
+https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/YuppTV/KalaignarSeithigal.m3u8
+#EXTINF:-1 tvg-id="NewsTamil24x7HD" tvg-name="News Tamil 24x7 HD" tvg-logo="https://i.imgur.com/0uB0k6K.png" group-title="News",News Tamil 24x7 HD
+https://cdn.pishow.tv/ott/live/1433/master.m3u8
+#EXTINF:-1 tvg-id="NewsJLive" tvg-name="News J (Tamil News)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/News_J_logo.png/220px-News_J_logo.png" group-title="News",News J (Tamil News)
+https://cdn.pishow.tv/ott/live/1279/master.m3u8
+#EXTINF:-1 tvg-id="SanaPlusMusicHD" tvg-name="Sana Plus Music HD" tvg-logo="https://mumbai-edge.smartplaytv.in/SanaPlusHD/logo.png" group-title="Music",Sana Plus Music HD
+https://mumbai-edge.smartplaytv.in/SanaPlusHD/index.m3u8
+#EXTINF:-1 tvg-id="DhoolTVMusic" tvg-name="Dhool TV (Tamil Music)" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Music",Dhool TV (Tamil Music)
+https://d1msejlow1t3l4.cloudfront.net/fta/subhartitv/playlist.m3u8
+#EXTINF:-1 tvg-id="MKSixEntertainment" tvg-name="MK Six (Tamil Entertainment)" tvg-logo="https://i.imgur.com/loy7Z4d.png" group-title="Entertainment",MK Six (Tamil Entertainment)
+https://mumt06.tangotv.in/qYyB8fXVMKSIX/index.m3u8
+#EXTINF:-1 tvg-id="MarutamTVTamil" tvg-name="Marutam TV (Tamil Nadu)" tvg-logo="https://mntv.livebox.co.in/mntvhls/logo.png" group-title="Regional & Local",Marutam TV (Tamil Nadu)
+https://mntv.livebox.co.in/mntvhls/live.m3u8
+#EXTINF:-1 tvg-id="MeiAlaiTV" tvg-name="Mei Alai TV" tvg-logo="https://meialai.iptelevishion.com/logo.png" group-title="Regional & Local",Mei Alai TV
+https://meialai.iptelevishion.com/meialai/2/index.m3u8
+#EXTINF:-1 tvg-id="OliTVIndia" tvg-name="Oli TV (Tamil Entertainment)" tvg-logo="https://live.olidigital.in/olitv/logo.png" group-title="Entertainment",Oli TV (Tamil Entertainment)
+https://live.olidigital.in/olitv/olitv/index.m3u8
+#EXTINF:-1 tvg-id="SuriyaTVTamil" tvg-name="Suriya TV (Tamil)" tvg-logo="https://stream.ottlive.co.in/suryatvtamil/logo.png" group-title="Entertainment",Suriya TV (Tamil)
+https://stream.ottlive.co.in/suryatvtamil/index.m3u8
+#EXTINF:-1 tvg-id="SanaTVTamil" tvg-name="Sana TV (Tamil)" tvg-logo="https://i.imgur.com/0uB0k6K.png" group-title="Entertainment",Sana TV (Tamil)
+https://vglivessai.akamaized.net/us/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/b6d9e864-ec16-410a-804d-ccf8f720bfaa/index.m3u8
+#EXTINF:-1 tvg-id="SubinTVTamil" tvg-name="Subin TV (Tamil)" tvg-logo="https://stream.galaxyott.live/live/subintv/logo.png" group-title="Entertainment",Subin TV (Tamil)
+https://stream.galaxyott.live/live/subintv/index.m3u8
+#EXTINF:-1 tvg-id="ShakthiTVTamil" tvg-name="Shakthi TV (Tamil)" tvg-logo="https://mumbai-edge.smartplaytv.in/ShakthiTV/logo.png" group-title="Entertainment",Shakthi TV (Tamil)
+https://mumbai-edge.smartplaytv.in/ShakthiTV/index.m3u8
+#EXTINF:-1 tvg-id="TamilVisionTVDiaspora" tvg-name="TamilVision TV (TVI Diaspora)" tvg-logo="https://live.cmr24.fm/TVI/logo.png" group-title="Entertainment",TamilVision TV (TVI Diaspora)
+https://live.cmr24.fm/TVI/HD/chunks.m3u8
+#EXTINF:-1 tvg-id="EETTVTamilCulture" tvg-name="EET TV (Tamil Culture)" tvg-logo="https://eu.streamjo.com/eetlive/logo.png" group-title="Old is Gold (Classics)",EET TV (Tamil Culture)
+https://eu.streamjo.com/eetlive/eettv.m3u8
+#EXTINF:-1 tvg-id="ImaiTVTamilCulture" tvg-name="Imai TV (Tamil Culture)" tvg-logo="https://live20.bozztv.com/akamaissh101/ssh101/imaitv/logo.png" group-title="Old is Gold (Classics)",Imai TV (Tamil Culture)
+https://live20.bozztv.com/akamaissh101/ssh101/imaitv/playlist.m3u8
+#EXTINF:-1 tvg-id="CartoonNetworkIndiaTamil" tvg-name="Cartoon Network (India - Tamil Audio)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/200px-Cartoon_Network_2010_logo.svg.png" group-title="Kids & Cartoons",Cartoon Network (India - Tamil Audio)
+https://drk6xq0vhn.gpcdn.net/live/cn_sd_abr/index.m3u8
+#EXTINF:-1 tvg-id="DiscoveryChannelIndiaTamil" tvg-name="Discovery Channel HD (India - Tamil Audio)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Discovery_Channel_2019.svg/220px-Discovery_Channel_2019.svg.png" group-title="Infotainment",Discovery Channel HD (India - Tamil Audio)
+https://drk6xq0vhn.gpcdn.net/live/discovery_hd_abr/index.m3u8
+#EXTINF:-1 tvg-id="AnimalPlanetIndiaTamil" tvg-name="Animal Planet HD (India - Tamil Audio)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Animal_Planet_logo_2018.svg/220px-Animal_Planet_logo_2018.svg.png" group-title="Infotainment",Animal Planet HD (India - Tamil Audio)
+https://drk6xq0vhn.gpcdn.net/live/animal_planet_hd_abr/index.m3u8
+#EXTINF:-1 tvg-id="DiscoveryKidsIndiaTamil" tvg-name="Discovery Kids (India - Tamil Audio)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Discovery_Kids_logo_2016.svg/220px-Discovery_Kids_logo_2016.svg.png" group-title="Kids & Cartoons",Discovery Kids (India - Tamil Audio)
+https://drk6xq0vhn.gpcdn.net/live/discovery_kids_abr/index.m3u8
+#EXTINF:-1 tvg-id="WOWKidzTamil" tvg-name="WOW Kidz Tamil (Cartoons)" tvg-logo="https://i.imgur.com/xv9cWSh.png" group-title="Kids & Cartoons",WOW Kidz Tamil (Cartoons)
+https://yuppparoriglin.akamaized.net/181224/smil:wowkidztam.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b
+#EXTINF:-1 tvg-id="SVBC2TamilTirupati" tvg-name="SVBC 2 (Sri Venkateswara Bhakthi Channel Tamil)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/90/SVBC_TV_logo.png/220px-SVBC_TV_logo.png" group-title="Devotional",SVBC 2 (Sri Venkateswara Bhakthi Channel Tamil)
+https://player.mslivestream.net/tamil/ac206e74d75b285755ee4924df87d951.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="DharsanTVDevotional" tvg-name="Dharsan TV (Tamil Devotional)" tvg-logo="https://i.imgur.com/kQK80gB.png" group-title="Devotional",Dharsan TV (Tamil Devotional)
+https://cable91tataplay.akamaized.net/live/dharshantv/index.m3u8
+#EXTINF:-1 tvg-id="BhagyamTVDevotional" tvg-name="Bhagyam TV (Tamil Devotional)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Bhagyam TV (Tamil Devotional)
+https://ott.bhagyam.net/hls/bhagyamweb/index-1409148900-now.m3u8
+#EXTINF:-1 tvg-id="NambikkaiTVDevotional" tvg-name="Nambikkai TV" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Nambikkai TV
+https://d1msejlow1t3l4.cloudfront.net/fta/nambikkaitv/playlist.m3u8
+#EXTINF:-1 tvg-id="ArputharYesuTV" tvg-name="Arputhar Yesu TV" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Arputhar Yesu TV
+https://account33.livebox.co.in/jesushelpshls/live.m3u8
+#EXTINF:-1 tvg-id="HebronTVDevotional" tvg-name="Hebron TV (Tamil)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Hebron TV (Tamil)
+https://account20.livebox.co.in/charleshls/live.m3u8
+#EXTINF:-1 tvg-id="HosannaTVTamil" tvg-name="Hosanna TV (Tamil)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Hosanna TV (Tamil)
+https://yuppnimresmum.akamaized.net/28072023/smil:hosanna.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b
+#EXTINF:-1 tvg-id="JoyTVTamil" tvg-name="Joy TV (Tamil)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Joy TV (Tamil)
+https://ktismaservers.in:3412/live/joytvlive.m3u8
+#EXTINF:-1 tvg-id="LifeTVIndiaTamil" tvg-name="Life TV (Tamil)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Life TV (Tamil)
+https://lifetv.livebox.co.in/lifetvhls/lifetv.m3u8
+#EXTINF:-1 tvg-id="VillageTVTamil" tvg-name="Village TV (Tamil Devotional)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Village TV (Tamil Devotional)
+https://live.villagetv.net/villagetv/hd/index.m3u8
+#EXTINF:-1 tvg-id="VerbumTVTamil" tvg-name="Verbum TV" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Verbum TV
+https://video-eu1.streamerr.co/hls/scb80244b91/live.m3u8
+#EXTINF:-1 tvg-id="AngelTVAmerica" tvg-name="Angel TV America (Tamil)" tvg-logo="https://i.imgur.com/qKLEGU7.png" group-title="Devotional",Angel TV America (Tamil)
+https://janya-digimix.akamaized.net/vglive-sk-374850/america/ngrp:angelamerica_all/playlist.m3u8
+#EXTINF:-1 tvg-id="AngelTVIndoChina" tvg-name="Angel TV Indo-China (Tamil)" tvg-logo="https://i.imgur.com/qKLEGU7.png" group-title="Devotional",Angel TV Indo-China (Tamil)
+https://janya-digimix.akamaized.net/vglive-sk-703035/indochina/ngrp:angelindochina_all/playlist.m3u8
+#EXTINF:-1 tvg-id="AngelTVIndonesia" tvg-name="Angel TV Indonesia (Tamil)" tvg-logo="https://i.imgur.com/qKLEGU7.png" group-title="Devotional",Angel TV Indonesia (Tamil)
+https://janya-digimix.akamaized.net/vglive-sk-234616/indonesia/ngrp:angelindonesia_all/playlist.m3u8

@@ -178,7 +178,7 @@ window.App = {
         await this.fetchMetadata();
         heading.textContent = '🌺 Tamil TV (Movies, Music, News & Devotional)';
         const tamilBadge = document.getElementById('nav-count-tamil');
-        if (tamilBadge && API.channels) tamilBadge.textContent = API.channels.length;
+        if (tamilBadge) tamilBadge.textContent = (API.staticChannels && API.staticChannels.length) ? API.staticChannels.length : 126;
       }
 
       if (this.state.tab === 'favorites') {
