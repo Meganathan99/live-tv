@@ -172,20 +172,13 @@ window.App = {
     }
 
     try {
-      if (this.state.tab === 'cricket') {
+      if (this.state.tab === 'radio') {
         const select = document.getElementById('playlist-preset-select');
         if (select) select.value = 'tamil';
-        heading.textContent = '🏏 Cricket Live Matches & Match Highlights';
-        this.renderCricketSection(this.state.cricketFilter || 'all');
-        pagination.style.display = 'none';
-        return;
-      }
-
-      if (this.state.tab === 'ott') {
-        const select = document.getElementById('playlist-preset-select');
-        if (select) select.value = 'tamil';
-        heading.textContent = '🎬 Public & Legal Cinema Hub (Free Full Movies & OTT)';
-        this.renderOTTSection(this.state.ottFilter || 'all');
+        heading.textContent = '📻 Tamil Online Radio FM (24/7 Live Music & Stations)';
+        if (typeof this.renderRadioSection === 'function') {
+          this.renderRadioSection(this.state.radioFilter || 'all');
+        }
         pagination.style.display = 'none';
         return;
       }

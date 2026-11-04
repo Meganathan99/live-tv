@@ -365,6 +365,41 @@ const Player = {
     this.loadHlsStream(streamUrl, channel);
   },
 
+  playAudioStream(streamUrl, channel) {
+    if (this.hls) {
+      this.hls.destroy();
+      this.hls = null;
+    }
+    const video = this.video;
+    if (!video) return;
+
+    video.src = streamUrl;
+    video.play().then(() => {
+      this.hideStatusOverlay();
+      window.App?.showToast(`Now Playing: ${channel.name}`);
+    }).catch(e => {
+      console.warn('Audio play notice:', e);
+      if (e.name === 'NotAllowedError') {
+        video.muted = true;
+        this.updateVolumeIcons();
+        video.play().catch(() => {
+          this.showError('Click to Listen', 'Click anywhere on the player to start live radio.');
+        });
+      } else {
+        this.showError('Radio Stream Notice', 'Connecting to live station...');
+      }
+    });
+
+    video.onplaying = () => {
+      this.hideStatusOverlay();
+    };
+
+    video.onerror = (e) => {
+      console.warn('Native audio stream error:', e);
+      this.showError('Station Offline', `Could not connect to ${channel.name}. Please select another station.`);
+    };
+  },
+
   loadHlsStream(streamUrl, channel, isFallback = false) {
     if (window.location.protocol === 'https:' && streamUrl.startsWith('http://') && !isFallback) {
       console.warn('Insecure HTTP on HTTPS. Auto-routing to HTTPS live feed...');
