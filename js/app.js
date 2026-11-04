@@ -3,7 +3,7 @@
  */
 window.App = {
   state: {
-    tab: 'all', // 'all' | 'favorites' | 'history'
+    tab: 'tamil', // 'tamil' | 'all' | 'favorites' | 'history'
     channels: [],
     totalChannels: 0,
     page: 1,
@@ -176,7 +176,9 @@ window.App = {
         await API.loadPlaylist('tamil');
         await this.fetchServerStatus();
         await this.fetchMetadata();
-        heading.textContent = '🌺 Tamil TV (Local & Devotional)';
+        heading.textContent = '🌺 Tamil TV (Movies, Music, News & Devotional)';
+        const tamilBadge = document.getElementById('nav-count-tamil');
+        if (tamilBadge && API.channels) tamilBadge.textContent = API.channels.length;
       }
 
       if (this.state.tab === 'favorites') {

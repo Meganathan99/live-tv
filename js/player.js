@@ -224,7 +224,7 @@ const Player = {
     actions.style.display = 'none';
   },
 
-  showError(message, subMessage = 'The stream could not be loaded directly.') {
+  showError(message, subMessage = 'The stream could not be loaded directly.', suggestions = []) {
     const overlay = document.getElementById('player-status-overlay');
     const spinner = document.getElementById('player-spinner');
     const text = document.getElementById('player-status-text');
@@ -236,11 +236,99 @@ const Player = {
     text.textContent = message;
     sub.textContent = subMessage;
     actions.style.display = 'flex';
+
+    let suggContainer = document.getElementById('player-status-suggestions');
+    if (!suggContainer) {
+      suggContainer = document.createElement('div');
+      suggContainer.id = 'player-status-suggestions';
+      suggContainer.style.cssText = 'display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 14px;';
+      overlay.appendChild(suggContainer);
+    }
+    suggContainer.innerHTML = '';
+
+    if (suggestions && suggestions.length > 0) {
+      const label = document.createElement('div');
+      label.style.cssText = 'width: 100%; font-size: 0.8rem; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;';
+      label.textContent = '⚡ Recommended Working Live Channels:';
+      suggContainer.appendChild(label);
+
+      suggestions.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = 'btn-primary';
+        btn.style.cssText = 'padding: 6px 12px; font-size: 0.8rem; background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.4); border-radius: 6px; cursor: pointer; color: #93c5fd; font-weight: 600; transition: all 0.2s;';
+        btn.innerHTML = `<span>▶ ${item.name}</span>`;
+        btn.onmouseover = () => btn.style.background = 'rgba(59, 130, 246, 0.4)';
+        btn.onmouseout = () => btn.style.background = 'rgba(59, 130, 246, 0.2)';
+        btn.onclick = (e) => {
+          e.stopPropagation();
+          const target = (API.channels || []).find(c => c.name.toLowerCase().includes(item.query.toLowerCase()));
+          if (target && window.App) {
+            window.App.playChannel(target);
+          } else {
+            window.App?.showToast(`Switching to ${item.name}...`);
+          }
+        };
+        suggContainer.appendChild(btn);
+      });
+      suggContainer.style.display = 'flex';
+    } else {
+      suggContainer.style.display = 'none';
+    }
   },
 
   hideStatusOverlay() {
     const overlay = document.getElementById('player-status-overlay');
     overlay.classList.add('hidden');
+    const suggContainer = document.getElementById('player-status-suggestions');
+    if (suggContainer) suggContainer.style.display = 'none';
+  },
+
+  getAlternativeSuggestions(channel) {
+    if (!channel) return [];
+    const name = (channel.name || '').toLowerCase();
+    const group = (channel.group || '').toLowerCase();
+
+    if (name.includes('ktv') || name.includes('thirai') || name.includes('movie') || name.includes('cinema') || group.includes('movie')) {
+      return [
+        { name: 'Thirai TV HD (24/7)', query: 'Thirai TV HD' },
+        { name: 'Roja Movies Live', query: 'Roja Movies' },
+        { name: 'Sri Vinayaga Movies', query: 'Sri Vinayaga Movies' },
+        { name: 'Bharathi Thirai Ulagam', query: 'Bharathi Thirai' }
+      ];
+    }
+
+    if (name.includes('sun music') || name.includes('music') || name.includes('isai') || group.includes('music')) {
+      return [
+        { name: 'Thirai Music HD', query: 'Thirai Music' },
+        { name: 'Isai Aruvi HD', query: 'Isai Aruvi' },
+        { name: '7S Music Tamil', query: '7S Music' },
+        { name: 'Tunes 6 Music HD', query: 'Tunes 6 Music' }
+      ];
+    }
+
+    if (name.includes('sun tv') || name.includes('zee tamil') || name.includes('star vijay') || name.includes('vijay') || name.includes('colors') || group.includes('entertainment')) {
+      return [
+        { name: 'Zee Tamil News HD', query: 'Zee Tamil News' },
+        { name: 'Roja TV Local', query: 'Roja TV' },
+        { name: 'Suriyan TV Live', query: 'Suriyan TV' },
+        { name: 'Polimer News Live', query: 'Polimer News' }
+      ];
+    }
+
+    if (group.includes('religious') || group.includes('devotional')) {
+      return [
+        { name: 'SVBC 2 Tamil', query: 'SVBC 2' },
+        { name: 'Sri Sankara TV', query: 'Sri Sankara' },
+        { name: 'OM TV Devotional', query: 'OM TV' },
+        { name: 'Madha TV', query: 'Madha TV' }
+      ];
+    }
+
+    return [
+      { name: 'Polimer News Live', query: 'Polimer News' },
+      { name: 'Thanthi TV Live', query: 'Thanthi TV' },
+      { name: 'Puthiya Thalaimurai', query: 'Puthiya Thalaimurai' }
+    ];
   },
 
   // Play a channel
@@ -309,15 +397,32 @@ const Player = {
         });
       });
 
-      // Handle HLS Errors with Auto-Proxy Fallback
+      // Handle HLS Errors with Auto-Proxy Fallback & DRM Key detection
       hls.on(Hls.Events.ERROR, (event, data) => {
         console.warn('HLS Event Error:', data.type, data.details, data);
+
+        const isKeyError = data.details === Hls.ErrorDetails.KEY_LOAD_ERROR || 
+                           data.details === Hls.ErrorDetails.KEY_LOAD_TIMEOUT ||
+                           data.details === 'keyLoadError' ||
+                           data.details === 'keyLoadTimeOut' ||
+                           (data.frag && data.frag.encrypted);
+
+        if (isKeyError) {
+          const suggestions = this.getAlternativeSuggestions(channel);
+          this.showError(
+            `Broadcaster Encrypted Feed: ${channel.name}`,
+            `This official stream is AES-128 protected by the broadcaster network. You can copy the URL to stream in external media players (VLC / TiviMate / MPV), or watch our verified 24/7 alternative live channel below:`,
+            suggestions
+          );
+          hls.destroy();
+          return;
+        }
 
         if (data.fatal) {
           switch (data.type) {
             case Hls.ErrorTypes.NETWORK_ERROR:
               // If we were on Auto mode and direct stream failed (likely CORS or mixed content), switch to proxy!
-              if (this.proxyMode === 'auto' && !this.isUsingProxy) {
+              if (this.proxyMode === 'auto' && !this.isUsingProxy && window.API && !API.isStaticMode()) {
                 console.log('Direct stream CORS/network failure. Auto-switching to high-speed proxy...');
                 window.App?.showToast('Bypassing stream CORS via proxy...');
                 this.isUsingProxy = true;
@@ -327,7 +432,12 @@ const Player = {
               }
 
               // Already proxied or proxy also failed
-              this.showError('Stream Unreachable', 'This broadcast stream appears temporarily offline or geoblocked. You can retry or open with VLC.');
+              const netSuggestions = this.getAlternativeSuggestions(channel);
+              this.showError(
+                'Stream Temporarily Offline', 
+                'The live feed server did not respond or is geo-restricted. You can retry, open in VLC, or watch an alternative channel below:',
+                netSuggestions
+              );
               hls.destroy();
               break;
 
@@ -337,7 +447,8 @@ const Player = {
               break;
 
             default:
-              this.showError('Playback Error', data.details || 'Unable to decode live stream');
+              const defSuggestions = this.getAlternativeSuggestions(channel);
+              this.showError('Playback Notice', data.details || 'Unable to decode live stream directly in browser.', defSuggestions);
               hls.destroy();
               break;
           }
