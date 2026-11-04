@@ -21,7 +21,12 @@ const Player = {
     this.startDiagnosticsTimer();
   },
 
+  audio: null,
+
   restoreSettings() {
+    if (!this.audio) {
+      this.audio = new Audio();
+    }
     const savedVol = localStorage.getItem('iptv_volume');
     if (savedVol !== null && this.video) {
       this.video.volume = parseFloat(savedVol);
@@ -349,10 +354,6 @@ const Player = {
     // Update Player HUD & Details
     this.updatePlayerHUD(channel);
 
-    // Determine stream URL:
-    // If proxyMode is 'force', always use proxy.
-    // If 'direct', always use raw URL.
-    // If 'auto', start with direct unless we already know it needs proxy.
     let streamUrl = channel.url;
     this.isUsingProxy = false;
 
@@ -361,46 +362,166 @@ const Player = {
       this.isUsingProxy = true;
     }
 
-    this.showSpinner(`Loading ${channel.name}...`);
-    this.loadHlsStream(streamUrl, channel);
+    if (channel.isRadio) {
+      this.playRadioChannel(channel, streamUrl);
+    } else {
+      this.hideRadioVisualizer();
+      this.showSpinner(`Loading ${channel.name}...`);
+      this.loadHlsStream(streamUrl, channel);
+    }
   },
 
-  playAudioStream(streamUrl, channel) {
+  showRadioVisualizer(channel) {
+    const vis = document.getElementById('player-radio-visualizer');
+    if (!vis) return;
+    vis.style.display = 'flex';
+
+    const logo = document.getElementById('radio-vis-logo');
+    if (logo) {
+      logo.src = channel.logo || '';
+      logo.onerror = () => {
+        logo.src = "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='20' fill='%231e293b'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E📻%3C/text%3E%3C/svg%3E";
+      };
+    }
+    const freq = document.getElementById('radio-vis-freq');
+    if (freq) freq.textContent = channel.frequency || 'Live FM';
+
+    const title = document.getElementById('radio-vis-title');
+    if (title) title.textContent = channel.name;
+
+    const tagline = document.getElementById('radio-vis-tagline');
+    if (tagline) tagline.textContent = channel.tagline || channel.desc || 'Live Tamil Broadcast';
+  },
+
+  hideRadioVisualizer() {
+    const vis = document.getElementById('player-radio-visualizer');
+    if (vis) vis.style.display = 'none';
+  },
+
+  setRadioVisualizerPlaying(isPlaying) {
+    const vis = document.getElementById('player-radio-visualizer');
+    if (!vis) return;
+    if (isPlaying) {
+      vis.classList.add('playing');
+    } else {
+      vis.classList.remove('playing');
+    }
+  },
+
+  playRadioChannel(channel, streamUrl) {
+    this.showRadioVisualizer(channel);
+    this.showSpinner(`Tuning in to ${channel.name}...`);
+
+    // Stop video and HLS
     if (this.hls) {
       this.hls.destroy();
       this.hls = null;
     }
-    const video = this.video;
-    if (!video) return;
+    if (this.video) {
+      this.video.pause();
+      this.video.removeAttribute('src');
+    }
+    if (this.audio) {
+      this.audio.pause();
+      this.audio.removeAttribute('src');
+    }
 
-    video.src = streamUrl;
-    video.play().then(() => {
-      this.hideStatusOverlay();
-      window.App?.showToast(`Now Playing: ${channel.name}`);
-    }).catch(e => {
-      console.warn('Audio play notice:', e);
-      if (e.name === 'NotAllowedError') {
-        video.muted = true;
+    const isHls = streamUrl.includes('.m3u8') || (channel.isHls === true);
+
+    if (isHls && typeof Hls !== 'undefined' && Hls.isSupported()) {
+      // HLS Audio (e.g. AIR Kodai FM, AIR Madurai FM)
+      const hls = new Hls({
+        debug: false,
+        enableWorker: true,
+        lowLatencyMode: true,
+      });
+      this.hls = hls;
+      hls.loadSource(streamUrl);
+      hls.attachMedia(this.video);
+
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        this.video.muted = false;
+        this.video.volume = parseFloat(localStorage.getItem('iptv_volume') || '1.0');
         this.updateVolumeIcons();
-        video.play().catch(() => {
-          this.showError('Click to Listen', 'Click anywhere on the player to start live radio.');
+
+        this.video.play().then(() => {
+          this.hideStatusOverlay();
+          this.setRadioVisualizerPlaying(true);
+          window.App?.showToast(`Now Playing: ${channel.name}`);
+        }).catch(e => {
+          console.warn('Autoplay prevented:', e);
+          this.showError('Click to Listen Live', `Click anywhere on player to start listening to ${channel.name}.`);
         });
-      } else {
-        this.showError('Radio Stream Notice', 'Connecting to live station...');
+      });
+
+      hls.on(Hls.Events.ERROR, (event, data) => {
+        if (data.fatal) {
+          console.warn('HLS radio error:', data);
+          this.showError('Radio Stream Offline', `Could not connect to ${channel.name}. Please select another station.`);
+          hls.destroy();
+        }
+      });
+
+    } else {
+      // Direct MP3/AAC Audio (e.g. Sooriyan FM, 89.4 FM, Shaiva Lahari)
+      if (!this.audio) {
+        this.audio = new Audio();
       }
-    });
+      const audio = this.audio;
+      audio.src = streamUrl;
+      audio.preload = 'auto';
+      audio.volume = parseFloat(localStorage.getItem('iptv_volume') || '1.0');
+      audio.muted = false;
+      this.updateVolumeIcons();
 
-    video.onplaying = () => {
-      this.hideStatusOverlay();
-    };
+      audio.onplaying = () => {
+        this.hideStatusOverlay();
+        this.setRadioVisualizerPlaying(true);
+        document.getElementById('icon-play').style.display = 'none';
+        document.getElementById('icon-pause').style.display = 'block';
+      };
 
-    video.onerror = (e) => {
-      console.warn('Native audio stream error:', e);
-      this.showError('Station Offline', `Could not connect to ${channel.name}. Please select another station.`);
-    };
+      audio.onpause = () => {
+        this.setRadioVisualizerPlaying(false);
+        document.getElementById('icon-play').style.display = 'block';
+        document.getElementById('icon-pause').style.display = 'none';
+      };
+
+      audio.onerror = (e) => {
+        console.warn('Audio element error:', e);
+        // Fallback: try via video element
+        if (this.video) {
+          this.video.src = streamUrl;
+          this.video.play().then(() => {
+            this.hideStatusOverlay();
+            this.setRadioVisualizerPlaying(true);
+          }).catch(() => {
+            this.showError('Radio Stream Error', `Unable to decode ${channel.name} directly. You can open in VLC.`);
+          });
+        }
+      };
+
+      audio.play().then(() => {
+        this.hideStatusOverlay();
+        this.setRadioVisualizerPlaying(true);
+        window.App?.showToast(`Now Playing: ${channel.name}`);
+      }).catch(err => {
+        console.warn('Audio play failed:', err);
+        if (err.name === 'NotAllowedError') {
+          this.showError('Click to Listen Live', `Click anywhere on player to start listening to ${channel.name}.`);
+        } else {
+          this.showError('Station Offline', `Could not connect to ${channel.name}. Try another station.`);
+        }
+      });
+    }
   },
 
   loadHlsStream(streamUrl, channel, isFallback = false) {
+    this.hideRadioVisualizer();
+    if (this.audio) {
+      this.audio.pause();
+      this.audio.removeAttribute('src');
+    }
     if (window.location.protocol === 'https:' && streamUrl.startsWith('http://') && !isFallback) {
       console.warn('Insecure HTTP on HTTPS. Auto-routing to HTTPS live feed...');
       const suggestions = this.getAlternativeSuggestions(channel);

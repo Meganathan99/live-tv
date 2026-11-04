@@ -152,14 +152,34 @@
           </div>
         `;
 
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+          e.preventDefault();
           if (window.Player) {
             window.Player.playChannel(station);
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            // Re-render to update the active playing visualizer
-            setTimeout(() => {
-              this.renderRadioSection(this.state.radioFilter || 'all');
-            }, 300);
+
+            document.querySelectorAll('.radio-station-card').forEach(c => {
+              c.classList.remove('playing');
+              const btnSpan = c.querySelector('.radio-play-btn span:last-child');
+              const btnIcon = c.querySelector('.radio-btn-icon');
+              if (btnSpan) btnSpan.textContent = 'Listen Live';
+              if (btnIcon) btnIcon.textContent = '▶';
+            });
+
+            card.classList.add('playing');
+            const thisSpan = card.querySelector('.radio-play-btn span:last-child');
+            const thisIcon = card.querySelector('.radio-btn-icon');
+            if (thisSpan) thisSpan.textContent = 'Listening';
+            if (thisIcon) thisIcon.textContent = '⏸';
+
+            const bTitle = document.querySelector('.radio-banner-title');
+            if (bTitle) bTitle.textContent = station.name;
+            const bDesc = document.querySelector('.radio-banner-desc');
+            if (bDesc) bDesc.textContent = station.tagline || station.desc;
+            const bFreq = document.querySelector('.radio-freq-badge');
+            if (bFreq) bFreq.textContent = station.frequency || 'Live FM';
+            const eq = document.querySelector('.radio-equalizer');
+            if (eq) eq.classList.add('active');
           }
         });
 
