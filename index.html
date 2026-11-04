@@ -58,7 +58,8 @@
       <!-- Playlist Selector -->
       <div class="playlist-selector-wrap" title="Switch Playlist source">
         <select id="playlist-preset-select" class="custom-select">
-          <option value="index" selected>📺 Main (index.m3u)</option>
+          <option value="tamil" selected>🌺 Tamil Live TV (Local & Devotional)</option>
+          <option value="index">📺 Main (All 11,400+ Channels)</option>
           <option value="news">📰 News Channels</option>
           <option value="sports">⚽ Sports Channels</option>
           <option value="movies">🎬 Movies Channels</option>
@@ -104,7 +105,15 @@
       <!-- Primary Navigation -->
       <div class="sidebar-section">
         <div class="sidebar-title">Library</div>
-        <button class="nav-item-btn active" data-tab="all">
+        <button class="nav-item-btn active" data-tab="tamil" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5;">
+          <div class="nav-item-content">
+            <span style="font-size: 1rem;">🌺</span>
+            <span style="font-weight: 700;">Tamil TV</span>
+          </div>
+          <span class="nav-badge" style="background: rgba(239, 68, 68, 0.3); color: #fff;">150</span>
+        </button>
+
+        <button class="nav-item-btn" data-tab="all">
           <div class="nav-item-content">
             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
             <span>All Channels</span>

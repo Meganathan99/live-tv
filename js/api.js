@@ -6,6 +6,7 @@
  */
 
 const PRESETS_MAP = {
+  tamil: 'tamil.m3u',
   index: 'https://iptv-org.github.io/iptv/index.m3u',
   news: 'https://iptv-org.github.io/iptv/categories/news.m3u',
   sports: 'https://iptv-org.github.io/iptv/categories/sports.m3u',
@@ -35,8 +36,8 @@ const API = {
   staticCategories: [],
   staticCountries: [],
   countriesMeta: {},
-  currentPresetId: 'index',
-  currentSource: 'https://iptv-org.github.io/iptv/index.m3u',
+  currentPresetId: 'tamil',
+  currentSource: 'tamil.m3u',
   isLoaded: false,
 
   async initStaticMetadata() {

@@ -27,7 +27,7 @@ window.App = {
     this.setupKeyboardShortcuts();
     
     try {
-      await API.loadPlaylist('index');
+      await API.loadPlaylist('tamil');
     } catch (e) {
       console.warn('Playlist preload note:', e);
     }
@@ -170,6 +170,15 @@ window.App = {
     }
 
     try {
+      if (this.state.tab === 'tamil') {
+        const select = document.getElementById('playlist-preset-select');
+        if (select) select.value = 'tamil';
+        await API.loadPlaylist('tamil');
+        await this.fetchServerStatus();
+        await this.fetchMetadata();
+        heading.textContent = '🌺 Tamil TV (Local & Devotional)';
+      }
+
       if (this.state.tab === 'favorites') {
         // Filter from favorites
         const favChannels = this.state.history.filter(c => this.state.favorites.has(c.id));

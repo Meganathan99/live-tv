@@ -24,7 +24,8 @@ if (!fs.existsSync(CACHE_DIR)) {
 
 // Known Presets from iptv-org
 const PRESETS = [
-  { id: 'index', name: 'Main (All Channels)', url: 'https://iptv-org.github.io/iptv/index.m3u', isDefault: true },
+  { id: 'tamil', name: '🌺 Tamil Live TV (Local & Devotional)', url: path.join(__dirname, 'tamil.m3u'), isDefault: true },
+  { id: 'index', name: 'Main (All Channels)', url: 'https://iptv-org.github.io/iptv/index.m3u' },
   { id: 'index.category', name: 'Grouped by Category', url: 'https://iptv-org.github.io/iptv/index.category.m3u' },
   { id: 'index.country', name: 'Grouped by Country', url: 'https://iptv-org.github.io/iptv/index.country.m3u' },
   { id: 'index.language', name: 'Grouped by Language', url: 'https://iptv-org.github.io/iptv/index.language.m3u' },
@@ -228,7 +229,11 @@ async function loadPlaylist(sourceUrl, forceRefresh = false) {
     }
 
     if (!m3uData) {
-      console.log(`Downloading fresh playlist from: ${sourceUrl}...`);
+      if (fs.existsSync(sourceUrl)) {
+        console.log(`Loading local playlist file from: ${sourceUrl}`);
+        m3uData = fs.readFileSync(sourceUrl, 'utf8');
+      } else {
+        console.log(`Downloading fresh playlist from: ${sourceUrl}...`);
       const response = await fetch(sourceUrl, {
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
@@ -240,6 +245,7 @@ async function loadPlaylist(sourceUrl, forceRefresh = false) {
       m3uData = await response.text();
       fs.writeFileSync(cachePath, m3uData, 'utf8');
       console.log(`Cached playlist saved to ${cachePath} (${(m3uData.length / 1024 / 1024).toFixed(2)} MB)`);
+      }
     }
 
     console.time('parseM3U');
