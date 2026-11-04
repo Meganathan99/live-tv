@@ -184,7 +184,7 @@ window.App = {
       if (this.state.tab === 'ott') {
         const select = document.getElementById('playlist-preset-select');
         if (select) select.value = 'tamil';
-        heading.textContent = '🎬 OTT Hub (Netflix, Disney+ Hotstar, Amazon Prime Video)';
+        heading.textContent = '🎬 Public & Legal Cinema Hub (Free Full Movies & OTT)';
         this.renderOTTSection(this.state.ottFilter || 'all');
         pagination.style.display = 'none';
         return;

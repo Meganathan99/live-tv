@@ -1805,3 +1805,138 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ==========================================================================
+   Public & Legal Cinema Hub Styles
+   ========================================================================== */
+
+.legal-hub-banner {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 23, 42, 0.85) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.legal-hub-badge {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #34d399;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.legal-hub-content h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.legal-hub-content p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ott-launcher-card.aha {
+  background: linear-gradient(135deg, rgba(255, 82, 0, 0.15) 0%, rgba(10, 10, 12, 0.8) 100%);
+  border: 1px solid rgba(255, 82, 0, 0.35);
+}
+.ott-launcher-card.aha:hover {
+  border-color: #ff5200;
+  box-shadow: 0 6px 20px rgba(255, 82, 0, 0.25);
+}
+
+.ott-launcher-card.zee5 {
+  background: linear-gradient(135deg, rgba(130, 48, 198, 0.15) 0%, rgba(10, 10, 12, 0.8) 100%);
+  border: 1px solid rgba(130, 48, 198, 0.35);
+}
+.ott-launcher-card.zee5:hover {
+  border-color: #8230c6;
+  box-shadow: 0 6px 20px rgba(130, 48, 198, 0.25);
+}
+
+.ott-launcher-card.jiocinema {
+  background: linear-gradient(135deg, rgba(216, 0, 100, 0.15) 0%, rgba(10, 10, 12, 0.8) 100%);
+  border: 1px solid rgba(216, 0, 100, 0.35);
+}
+.ott-launcher-card.jiocinema:hover {
+  border-color: #d80064;
+  box-shadow: 0 6px 20px rgba(216, 0, 100, 0.25);
+}
+
+.ott-duration-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e2e8f0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.ott-cast-line,
+.ott-director-line {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ott-distributor-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 3px 0;
+  width: fit-content;
+}
+
+.ott-btn-play-movie {
+  flex: 1.4;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  border: none;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 7px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.ott-btn-play-movie:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.5);
+  transform: translateY(-1px);
+}

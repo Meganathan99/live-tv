@@ -251,7 +251,7 @@
   };
 
   /**
-   * Render OTT Hub (Netflix, Disney+ Hotstar, Amazon Prime Video)
+   * Render 100% Legal OTT Hub & Free Movies Section
    */
   window.App.renderOTTSection = function (filter = 'all') {
     this.state.ottFilter = filter;
@@ -260,26 +260,43 @@
     const totalBadge = document.getElementById('directory-total-badge');
     const heading = document.getElementById('directory-heading');
 
-    if (heading) heading.textContent = '🎬 OTT Hub (Netflix, Disney+ Hotstar, Amazon Prime Video)';
+    if (heading) heading.textContent = '🎬 Public & Legal Cinema Hub (Free Full Movies & OTT)';
     if (emptyState) emptyState.style.display = 'none';
 
-    const oData = window.OTT_DATA || { platforms: [], titles: [], freeFastChannels: [] };
+    const oData = window.OTT_DATA || { platforms: [], legalMovies: [], titles: [], freeFastChannels: [] };
+    const legalMovies = oData.legalMovies || [];
+    const titles = oData.titles || [];
+    const freeFastChannels = oData.freeFastChannels || [];
+    const totalCount = legalMovies.length + titles.length + freeFastChannels.length;
+
     if (totalBadge) {
-      totalBadge.textContent = 'Netflix • Hotstar • Prime Video • Free OTT Cinema';
+      totalBadge.textContent = `${legalMovies.length} Free Full Movies • ${freeFastChannels.length} FAST Live Cinema • OTT Hub`;
     }
 
     if (!grid) return;
     grid.innerHTML = '';
     const container = document.createDocumentFragment();
 
-    // 1. OTT Launchers Header
+    // 1. Legal Hub Transparency Banner
+    const banner = document.createElement('div');
+    banner.className = 'legal-hub-banner';
+    banner.innerHTML = `
+      <div class="legal-hub-badge">🛡️ 100% LEGAL & LICENSED</div>
+      <div class="legal-hub-content">
+        <h4>Public & Legal Cinema Hub</h4>
+        <p>Stream officially licensed full-length Tamil movies from verified studios (AP International, Saregama Tamil, Rajshri Tamil, Ayngaran), 24/7 FAST broadcast channels, and official OTT streaming portals.</p>
+      </div>
+    `;
+    container.appendChild(banner);
+
+    // 2. OTT Launchers Header
     const launcherHeader = document.createElement('div');
     launcherHeader.className = 'ott-hub-header';
     launcherHeader.innerHTML = `
       <a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer" class="ott-launcher-card netflix">
         <div class="ott-launcher-left">
           <div class="ott-launcher-title"><span>🔴</span> Netflix Hub</div>
-          <div class="ott-launcher-subtitle">Squid Game, Leo, Stranger Things & Originals</div>
+          <div class="ott-launcher-subtitle">Leo, Squid Game, Stranger Things & Originals</div>
         </div>
         <span class="ott-launch-action-btn">Launch Netflix ↗</span>
       </a>
@@ -295,22 +312,48 @@
       <a href="https://www.primevideo.com" target="_blank" rel="noopener noreferrer" class="ott-launcher-card prime">
         <div class="ott-launcher-left">
           <div class="ott-launcher-title"><span>🔵</span> Amazon Prime Video</div>
-          <div class="ott-launcher-subtitle">Mirzapur, The Boys, Panchayat & Blockbusters</div>
+          <div class="ott-launcher-subtitle">Captain Miller, Suzhal, Mirzapur & The Boys</div>
         </div>
         <span class="ott-launch-action-btn">Launch Prime ↗</span>
+      </a>
+
+      <a href="https://www.aha.video" target="_blank" rel="noopener noreferrer" class="ott-launcher-card aha">
+        <div class="ott-launcher-left">
+          <div class="ott-launcher-title"><span>🟠</span> Aha Tamil</div>
+          <div class="ott-launcher-subtitle">100% Tamil OTT: Irai, Raththam, Sardar & Cinema</div>
+        </div>
+        <span class="ott-launch-action-btn">Launch Aha ↗</span>
+      </a>
+
+      <a href="https://www.zee5.com" target="_blank" rel="noopener noreferrer" class="ott-launcher-card zee5">
+        <div class="ott-launcher-left">
+          <div class="ott-launcher-title"><span>🟣</span> Zee5 Tamil</div>
+          <div class="ott-launcher-subtitle">Ayali, Sengalam, Valimai & Exclusive Series</div>
+        </div>
+        <span class="ott-launch-action-btn">Launch Zee5 ↗</span>
+      </a>
+
+      <a href="https://www.jiocinema.com" target="_blank" rel="noopener noreferrer" class="ott-launcher-card jiocinema">
+        <div class="ott-launcher-left">
+          <div class="ott-launcher-title"><span>💖</span> JioCinema</div>
+          <div class="ott-launcher-subtitle">Free Movies, Blockbusters & Live Digital Sports</div>
+        </div>
+        <span class="ott-launch-action-btn">Launch JioCinema ↗</span>
       </a>
     `;
     container.appendChild(launcherHeader);
 
-    // 2. Sub-filter Bar
+    // 3. Sub-filter Bar
     const filterBar = document.createElement('div');
     filterBar.className = 'sub-filter-bar';
     const filters = [
-      { id: 'all', label: '🌟 All OTT Titles', count: oData.titles.length + oData.freeFastChannels.length },
-      { id: 'netflix', label: '🔴 Netflix', count: oData.titles.filter(t => t.platform === 'netflix').length },
-      { id: 'hotstar', label: '🔷 Disney+ Hotstar', count: oData.titles.filter(t => t.platform === 'hotstar').length },
-      { id: 'prime', label: '🔵 Prime Video', count: oData.titles.filter(t => t.platform === 'prime').length },
-      { id: 'free_ott', label: '🆓 Free Live Movies', count: oData.freeFastChannels.length }
+      { id: 'all', label: '🌟 All Legal Titles', count: totalCount },
+      { id: 'legal_movies', label: '🍿 Free Full Movies', count: legalMovies.length },
+      { id: 'free_ott', label: '📡 24/7 Live Movie Channels', count: freeFastChannels.length },
+      { id: 'netflix', label: '🔴 Netflix', count: titles.filter(t => t.platform === 'netflix').length },
+      { id: 'hotstar', label: '🔷 Disney+ Hotstar', count: titles.filter(t => t.platform === 'hotstar').length },
+      { id: 'prime', label: '🔵 Prime Video', count: titles.filter(t => t.platform === 'prime').length },
+      { id: 'regional', label: '🟡 Aha & Zee5', count: titles.filter(t => t.platform === 'regional').length }
     ];
 
     filters.forEach(f => {
@@ -324,64 +367,86 @@
     });
     container.appendChild(filterBar);
 
-    // 3. Render OTT Content Cards
-    let filteredTitles = oData.titles;
-    if (filter === 'netflix' || filter === 'hotstar' || filter === 'prime') {
-      filteredTitles = oData.titles.filter(t => t.platform === filter);
-    } else if (filter === 'free_ott') {
-      filteredTitles = [];
+    // Filter by search query if user typed into global search input
+    const query = (this.state.search || '').toLowerCase().trim();
+
+    // 4. Render Legal Full Movies
+    const showMovies = (filter === 'all' || filter === 'legal_movies');
+    if (showMovies) {
+      let filteredMovies = legalMovies;
+      if (query) {
+        filteredMovies = filteredMovies.filter(m =>
+          m.title.toLowerCase().includes(query) ||
+          m.cast.toLowerCase().includes(query) ||
+          m.director.toLowerCase().includes(query) ||
+          m.distributor.toLowerCase().includes(query) ||
+          m.genres.some(g => g.toLowerCase().includes(query))
+        );
+      }
+
+      filteredMovies.forEach(m => {
+        const card = document.createElement('div');
+        card.className = 'ott-card';
+        card.innerHTML = `
+          <div class="ott-poster-wrap">
+            <img class="ott-poster" src="${m.thumb}" alt="${m.title}" loading="lazy" onerror="window.handleImgFallback(this, 'ott');">
+            <span class="ott-platform-badge" style="background: #10b981;">✅ 100% LEGAL & FREE</span>
+            <span class="ott-duration-badge">${m.duration}</span>
+            <span class="ott-rating-badge">${m.rating}</span>
+          </div>
+          <div class="ott-body">
+            <h4 class="ott-title">${m.title}</h4>
+            <div class="ott-genres-row">
+              ${m.genres.map(g => `<span class="ott-genre-tag">${g}</span>`).join('')}
+              <span class="ott-genre-tag" style="color: #6ee7b7;">${m.year}</span>
+            </div>
+            <div class="ott-cast-line"><strong>Cast:</strong> ${m.cast}</div>
+            <div class="ott-director-line"><strong>Dir:</strong> ${m.director}</div>
+            <div class="ott-distributor-badge">🏢 <span>${m.distributor}</span></div>
+            <div class="ott-overview">${m.overview}</div>
+            <div class="ott-actions-row">
+              <button class="ott-btn-play-movie">
+                <span>▶ Watch Full Movie</span>
+              </button>
+              <a href="${m.watchUrl}" target="_blank" rel="noopener noreferrer" class="ott-btn-watch" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); flex: 0.8;" title="Open on official rights holder's channel">
+                <span>↗ Studio</span>
+              </a>
+            </div>
+          </div>
+        `;
+
+        // Click to play full movie in Cinema Modal
+        card.querySelector('.ott-btn-play-movie')?.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.openVideoModal({
+            title: `${m.title} (${m.year}) — Full Movie`,
+            badge: '100% LEGAL & FREE FULL MOVIE',
+            badgeColor: '#10b981',
+            embedUrl: m.embedUrl,
+            videoId: m.videoId,
+            desc: `<strong>${m.title} (${m.year})</strong><br><span style="color: #34d399; font-weight: 600;">⭐ ${m.rating}</span> • ⏱ ${m.duration} • 🔊 ${m.language}<br><strong>🎭 Cast:</strong> ${m.cast}<br><strong>🎬 Director:</strong> ${m.director}<br><strong>🏢 Official Distributor:</strong> ${m.distributor}<br><p style="margin-top: 8px; color: var(--text-dim); font-size: 0.8rem;">${m.overview}</p>`,
+            actionLabel: '↗ Open on YouTube',
+            onAction: () => {
+              window.open(m.watchUrl, '_blank');
+            }
+          });
+        });
+
+        container.appendChild(card);
+      });
     }
 
-    filteredTitles.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'ott-card';
-      card.innerHTML = `
-        <div class="ott-poster-wrap">
-          <img class="ott-poster" src="${item.poster}" alt="${item.title}" loading="lazy" onerror="window.handleImgFallback(this, 'ott');">
-          <span class="ott-platform-badge ${item.platform}">${item.platformName}</span>
-          <span class="ott-rating-badge">${item.rating}</span>
-        </div>
-        <div class="ott-body">
-          <h4 class="ott-title">${item.title}</h4>
-          <div class="ott-genres-row">
-            ${item.genres.map(g => `<span class="ott-genre-tag">${g}</span>`).join('')}
-            <span class="ott-genre-tag" style="color: #6ee7b7;">${item.year}</span>
-          </div>
-          <div class="ott-overview">${item.overview}</div>
-          <div class="ott-actions-row">
-            <button class="ott-btn-trailer" data-video-id="${item.videoId}">
-              <span>▶ Watch Trailer</span>
-            </button>
-            <a href="${item.watchUrl}" target="_blank" rel="noopener noreferrer" class="ott-btn-watch" style="background: ${item.platform === 'netflix' ? '#e50914' : (item.platform === 'hotstar' ? '#0c54e0' : '#00a8e1')};">
-              <span>🚀 Stream ↗</span>
-            </a>
-          </div>
-        </div>
-      `;
-
-      // Trailer button
-      card.querySelector('.ott-btn-trailer')?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        this.openVideoModal({
-          title: `${item.title} — Official Trailer`,
-          badge: item.platformName.toUpperCase(),
-          badgeColor: item.platform === 'netflix' ? '#e50914' : (item.platform === 'hotstar' ? '#0c54e0' : '#00a8e1'),
-          videoId: item.videoId,
-          embedUrl: `https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1`,
-          desc: `<strong>${item.title} (${item.year})</strong> — ${item.overview}<br><span style="color: var(--text-muted); font-size: 0.78rem;">Audio: ${item.language} • Rating: ${item.rating}</span>`,
-          actionLabel: `🚀 Open on ${item.platformName}`,
-          onAction: () => {
-            window.open(item.watchUrl, '_blank');
-          }
-        });
-      });
-
-      container.appendChild(card);
-    });
-
-    // Also show Free Movie Channels if 'all' or 'free_ott'
+    // 5. Render 24/7 FAST Free Movie Channels
     if (filter === 'all' || filter === 'free_ott') {
-      oData.freeFastChannels.forEach(ch => {
+      let filteredChannels = freeFastChannels;
+      if (query) {
+        filteredChannels = filteredChannels.filter(c =>
+          c.name.toLowerCase().includes(query) ||
+          c.desc.toLowerCase().includes(query)
+        );
+      }
+
+      filteredChannels.forEach(ch => {
         const card = document.createElement('div');
         card.className = 'channel-card';
         card.innerHTML = `
@@ -391,7 +456,7 @@
               <img class="card-logo" src="${ch.logo}" alt="${ch.name}" loading="lazy" onerror="window.handleLogoFallback(this);">
             </div>
             <div class="card-badges-wrap">
-              <span class="tag-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4);">FREE OTT</span>
+              <span class="tag-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16,185,129,0.4);">FREE FAST</span>
               <span class="tag-badge">${ch.quality}</span>
             </div>
           </div>
@@ -416,6 +481,68 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }
         });
+        container.appendChild(card);
+      });
+    }
+
+    // 6. Render Curated OTT Titles
+    const showOTT = (filter === 'all' || filter === 'netflix' || filter === 'hotstar' || filter === 'prime' || filter === 'regional');
+    if (showOTT) {
+      let filteredTitles = titles;
+      if (filter !== 'all') {
+        filteredTitles = titles.filter(t => t.platform === filter);
+      }
+      if (query) {
+        filteredTitles = filteredTitles.filter(t =>
+          t.title.toLowerCase().includes(query) ||
+          t.platformName.toLowerCase().includes(query) ||
+          t.genres.some(g => g.toLowerCase().includes(query))
+        );
+      }
+
+      filteredTitles.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'ott-card';
+        card.innerHTML = `
+          <div class="ott-poster-wrap">
+            <img class="ott-poster" src="${item.poster}" alt="${item.title}" loading="lazy" onerror="window.handleImgFallback(this, 'ott');">
+            <span class="ott-platform-badge ${item.platform}">${item.platformName}</span>
+            <span class="ott-rating-badge">${item.rating}</span>
+          </div>
+          <div class="ott-body">
+            <h4 class="ott-title">${item.title}</h4>
+            <div class="ott-genres-row">
+              ${item.genres.map(g => `<span class="ott-genre-tag">${g}</span>`).join('')}
+              <span class="ott-genre-tag" style="color: #6ee7b7;">${item.year}</span>
+            </div>
+            <div class="ott-overview">${item.overview}</div>
+            <div class="ott-actions-row">
+              <button class="ott-btn-trailer" data-video-id="${item.videoId}">
+                <span>▶ Trailer</span>
+              </button>
+              <a href="${item.watchUrl}" target="_blank" rel="noopener noreferrer" class="ott-btn-watch" style="background: ${item.platform === 'netflix' ? '#e50914' : (item.platform === 'hotstar' ? '#0c54e0' : (item.platform === 'regional' ? '#ff5200' : '#00a8e1'))};">
+                <span>🚀 Stream ↗</span>
+              </a>
+            </div>
+          </div>
+        `;
+
+        card.querySelector('.ott-btn-trailer')?.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.openVideoModal({
+            title: `${item.title} — Official Trailer`,
+            badge: item.platformName.toUpperCase(),
+            badgeColor: item.platform === 'netflix' ? '#e50914' : (item.platform === 'hotstar' ? '#0c54e0' : (item.platform === 'regional' ? '#ff5200' : '#00a8e1')),
+            videoId: item.videoId,
+            embedUrl: `https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1`,
+            desc: `<strong>${item.title} (${item.year})</strong> — ${item.overview}<br><span style="color: var(--text-muted); font-size: 0.78rem;">Audio: ${item.language} • Rating: ${item.rating}</span>`,
+            actionLabel: `🚀 Open on ${item.platformName}`,
+            onAction: () => {
+              window.open(item.watchUrl, '_blank');
+            }
+          });
+        });
+
         container.appendChild(card);
       });
     }
