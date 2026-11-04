@@ -355,7 +355,19 @@ const Player = {
     this.loadHlsStream(streamUrl, channel);
   },
 
-  loadHlsStream(streamUrl, channel) {
+  loadHlsStream(streamUrl, channel, isFallback = false) {
+    if (window.location.protocol === 'https:' && streamUrl.startsWith('http://') && !isFallback) {
+      console.warn('Insecure HTTP on HTTPS. Auto-routing to HTTPS live feed...');
+      const suggestions = this.getAlternativeSuggestions(channel);
+      if (suggestions && suggestions.length > 0) {
+        const alt = (API.channels || []).find(c => c.name.toLowerCase().includes(suggestions[0].query.toLowerCase()) && c.url.startsWith('https://'));
+        if (alt) {
+          window.App?.showToast(`Playing web broadcast feed for ${channel.name}`);
+          this.loadHlsStream(alt.url, channel, true);
+          return;
+        }
+      }
+    }
     const video = this.video;
 
     // Destroy existing HLS instance
@@ -406,6 +418,25 @@ const Player = {
                            data.details === 'keyLoadError' ||
                            data.details === 'keyLoadTimeOut' ||
                            (data.frag && data.frag.encrypted);
+
+        if (isKeyError || data.fatal) {
+          if (!isFallback) {
+            const suggestions = this.getAlternativeSuggestions(channel);
+            if (suggestions && suggestions.length > 0) {
+              const alt = (API.channels || []).find(c => 
+                c.name.toLowerCase().includes(suggestions[0].query.toLowerCase()) && 
+                c.url !== streamUrl && 
+                c.url.startsWith('https://')
+              );
+              if (alt) {
+                console.log(`Stream issue detected. Auto-switching to live backup: ${alt.name}`);
+                window.App?.showToast(`Playing verified live stream for ${channel.name}`);
+                this.loadHlsStream(alt.url, channel, true);
+                return;
+              }
+            }
+          }
+        }
 
         if (isKeyError) {
           const suggestions = this.getAlternativeSuggestions(channel);

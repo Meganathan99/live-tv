@@ -1,30 +1,14 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="KTVHD" tvg-name="KTV HD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z1SEP.png?lock=720x540" group-title="Popular Movies",KTV HD
-http://ptuf.ridsys.in/riptv/live/K_TV/index.m3u8
-#EXTINF:-1 tvg-id="SunMusicHD" tvg-name="Sun Music HD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Popular Music",Sun Music HD
-http://ptuf.ridsys.in/riptv/live/SUN_MUSIC_SD/index.m3u8
-#EXTINF:-1 tvg-id="ZeeThiraiHD" tvg-name="Zee Thirai HD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_THIRAI_HD/images/LOGO_HD/LOGO_HD_image.png" group-title="Popular Movies",Zee Thirai HD
-http://ptuf.ridsys.in/riptv/live/ZEE_THIRAI/index.m3u8
-#EXTINF:-1 tvg-id="SunTVHD" tvg-name="Sun TV HD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Entertainment",Sun TV HD
-http://ptuf.ridsys.in/riptv/live/SUN_TV/index.m3u8
-#EXTINF:-1 tvg-id="ZeeTamilHD" tvg-name="Zee Tamil HD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG00233WCL.png?lock=720x540" group-title="Entertainment",Zee Tamil HD
-http://ptuf.ridsys.in/riptv/live/ZEE_TAMIL_HD/index.m3u8
-#EXTINF:-1 tvg-id="StarVijayHD" tvg-name="Star Vijay HD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z1SEP.png?lock=720x540" group-title="Entertainment",Star Vijay HD
-http://ptuf.ridsys.in/riptv/live/STAR_VIJAY/index.m3u8
-#EXTINF:-1 tvg-id="VijaySuperHD" tvg-name="Vijay Super HD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z1SEP.png?lock=720x540" group-title="Popular Movies",Vijay Super HD
-http://ptuf.ridsys.in/riptv/live/VIJAY_SUPER/index.m3u8
-#EXTINF:-1 tvg-id="AdithyaTVComedy" tvg-name="Adithya TV Comedy" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Entertainment",Adithya TV Comedy
-http://ptuf.ridsys.in/riptv/live/ADITYA_TV/index.m3u8
-#EXTINF:-1 tvg-id="SunNewsLive" tvg-name="Sun News Live" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="News",Sun News Live
-http://ptuf.ridsys.in/riptv/live/SUN_NEWS/index.m3u8
-#EXTINF:-1 tvg-id="SunLifeHD" tvg-name="Sun Life HD" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Entertainment",Sun Life HD
-http://ptuf.ridsys.in/riptv/live/SUN_LIFE/index.m3u8
-#EXTINF:-1 tvg-id="ColorsTamilHD" tvg-name="Colors Tamil HD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_TAMIL/images/LOGO_HD/image.png" group-title="Entertainment",Colors Tamil HD
-http://ptuf.ridsys.in/riptv/live/COLORS_TAMIL/index.m3u8
-#EXTINF:-1 tvg-id="KalaignarTV" tvg-name="Kalaignar TV" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Entertainment",Kalaignar TV
-http://ptuf.ridsys.in/riptv/live/KALAIGNAR_TV/index.m3u8
-#EXTINF:-1 tvg-id="JayaTVHD" tvg-name="Jaya TV HD" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Entertainment",Jaya TV HD
-http://ptuf.ridsys.in/riptv/live/JAYA_TV/index.m3u8
+#EXTINF:-1 tvg-id="KTVTamilCinemaLive" tvg-name="KTV (Tamil Cinema Live)" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z1SEP.png?lock=720x540" group-title="Popular Movies",KTV (Tamil Cinema Live)
+https://live.apcloud.in/thiraitv/thiraitvhd/index.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="SunMusicTamilHitsLive" tvg-name="Sun Music (Tamil Hits Live)" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Popular Music",Sun Music (Tamil Hits Live)
+https://view.apserver.in/tmp_hls1/thiraitvplus/index.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="ZeeThiraiTamilCinemaLive" tvg-name="Zee Thirai (Tamil Cinema Live)" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_THIRAI_HD/images/LOGO_HD/LOGO_HD_image.png" group-title="Popular Movies",Zee Thirai (Tamil Cinema Live)
+https://hls.rojatv.cloud/rojamovies/rojamovies/index.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="IsaiAruviHDYuppTVMusic" tvg-name="Isai Aruvi HD (YuppTV Music)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Isai_Aruvi.png" group-title="Popular Music",Isai Aruvi HD (YuppTV Music)
+https://segment.yuppcdn.net/140622/isaiaruvi/playlist.m3u8
+#EXTINF:-1 tvg-id="7SMusicTamilHits" tvg-name="7S Music (Tamil Hits)" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Popular Music",7S Music (Tamil Hits)
+https://mumt03.tangotv.in/Dsly5z3H7SMUSIC/index.m3u8
 #EXTINF:-1 tvg-id="ThiraiTVHD247Movies" tvg-name="Thirai TV HD (24/7 Movies)" tvg-logo="https://live.apcloud.in/thiraitv/thiraitvhd/logo.png" group-title="Movies",Thirai TV HD (24/7 Movies)
 https://live.apcloud.in/thiraitv/thiraitvhd/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="RojaMoviesLive" tvg-name="Roja Movies Live" tvg-logo="https://hls.rojatv.cloud/rojamovies/logo.png" group-title="Movies",Roja Movies Live
@@ -43,14 +27,8 @@ https://live20.bozztv.com/giatv/giatv-Sooriyantv/Sooriyantv/playlist.m3u8?origin
 https://view.apserver.in/tmp_hls2/thiraitv/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="ThiraiMusicHD" tvg-name="Thirai Music HD" tvg-logo="https://view.apserver.in/tmp_hls1/logo.png" group-title="Music",Thirai Music HD
 https://view.apserver.in/tmp_hls1/thiraitvplus/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="IsaiAruviHDYuppTV" tvg-name="Isai Aruvi HD (YuppTV)" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Isai_Aruvi.png" group-title="Music",Isai Aruvi HD (YuppTV)
-https://segment.yuppcdn.net/140622/isaiaruvi/playlist.m3u8
-#EXTINF:-1 tvg-id="7SMusicTamilHits" tvg-name="7S Music (Tamil Hits)" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Music",7S Music (Tamil Hits)
-https://mumt03.tangotv.in/Dsly5z3H7SMUSIC/index.m3u8
 #EXTINF:-1 tvg-id="Tunes6MusicHD" tvg-name="Tunes 6 Music HD" tvg-logo="https://stream.d6-pro.com/Tunes6music/logo.png" group-title="Music",Tunes 6 Music HD
 https://stream.d6-pro.com/Tunes6music/live/video.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="KCMusicTV" tvg-name="KC Music TV" tvg-logo="https://rtmp.bmlive.net/bms/kcmusic/logo.png" group-title="Music",KC Music TV
-https://rtmp.bmlive.net/bms/kcmusic/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="MNMusicLive" tvg-name="MN Music Live" tvg-logo="https://mntv.livebox.co.in/musichls/logo.png" group-title="Music",MN Music Live
 https://mntv.livebox.co.in/musichls/live.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="IsaiTVHD" tvg-name="Isai TV HD" tvg-logo="https://server.sscloud7.in/isaihd/logo.png" group-title="Music",Isai TV HD
@@ -63,64 +41,28 @@ https://sanplayout.xyz/live2/retromusichd/playlist.m3u8?origin=github.com/amazey
 https://real-vk.proxy.nellaiiptv.com/DIAMONDMUSIC/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="EyeTamilMusic" tvg-name="Eye Tamil Music" tvg-logo="https://2.proxy.nellaiiptv.com/EyeMedia/music/logo.png" group-title="Music",Eye Tamil Music
 https://2.proxy.nellaiiptv.com/EyeMedia/music/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="7StarMusicTV" tvg-name="7 Star Music TV" tvg-logo="http://premium.7starcloud.com:1935/live/7starmusic/logo.png" group-title="Music",7 Star Music TV
-http://premium.7starcloud.com:1935/live/7starmusic/playlist.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="RajMusixTamil" tvg-name="Raj Musix Tamil" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_RAJ_MUSIX_TAMIL/images/LOGO_HD/image.png" group-title="Music",Raj Musix Tamil
 https://livestream.rajtv.tv/hlslive/Admin/px08241087/live/Raj_Musix/master_1.m3u8
 #EXTINF:-1 tvg-id="IsaiSaralTV" tvg-name="Isai Saral TV" tvg-logo="https://srnet-bmlive-net.proxy.nellaiiptv.com/isaisaral/logo.png" group-title="Music",Isai Saral TV
 https://srnet-bmlive-net.proxy.nellaiiptv.com/isaisaral/mystream/playlist.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="AnalaiMusicTV" tvg-name="Analai Music TV" tvg-logo="http://148.113.170.17:8091/analaimusic/logo.png" group-title="Music",Analai Music TV
-http://148.113.170.17:8091/analaimusic/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="SVBC2SriVenkateswaraBhakthiChannelTamil" tvg-name="SVBC 2 (Sri Venkateswara Bhakthi Channel Tamil)" tvg-logo="https://i.imgur.com/83p1ZgS.png" group-title="Devotional",SVBC 2 (Sri Venkateswara Bhakthi Channel Tamil)
-https://svbc1.akamaized.net/hls/live/2034509/svbc2/master.m3u8
-#EXTINF:-1 tvg-id="SriSankaraTVTamil" tvg-name="Sri Sankara TV Tamil" tvg-logo="https://mumt05.tangotv.in/87NeALx2SRISANKARA/index.m3u8" group-title="Devotional",Sri Sankara TV Tamil
-https://live.srisankaratv.com/hls/srisankaratv.m3u8
-#EXTINF:-1 tvg-id="SairamTVShirdiSaiBabaDevotional" tvg-name="Sairam TV (Shirdi Sai Baba Devotional)" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Devotional",Sairam TV (Shirdi Sai Baba Devotional)
-https://shserver.in:1936/sairamtv/sairamtv/playlist.m3u8
-#EXTINF:-1 tvg-id="OMTVTamilDevotional" tvg-name="OM TV Tamil Devotional" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",OM TV Tamil Devotional
-https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e71c4999120658782a9be6a666d92631a0e8/om-tv/49868725-d721-4f10-9fb8-5188f6fa0e0b/0.m3u8
-#EXTINF:-1 tvg-id="SivanTVLordShivaBhakthi" tvg-name="Sivan TV (Lord Shiva Bhakthi)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Sivan TV (Lord Shiva Bhakthi)
-https://shserver.in:1936/sivantv/sivantv/playlist.m3u8
-#EXTINF:-1 tvg-id="AasthaTamil" tvg-name="Aastha Tamil" tvg-logo="https://i.imgur.com/YQK9ewf.png" group-title="Devotional",Aastha Tamil
-https://aasthaott.akamaized.net/110923/smil:aasthatamil.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="MadhaTVCatholicTamil" tvg-name="Madha TV (Catholic Tamil)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Madha TV (Catholic Tamil)
-https://shserver.in:1936/madhatv/madhatv/playlist.m3u8
-#EXTINF:-1 tvg-id="AngelTVHDTamil" tvg-name="Angel TV HD (Tamil)" tvg-logo="https://i.imgur.com/qKLEGU7.png" group-title="Devotional",Angel TV HD (Tamil)
-https://cdn.pishow.tv/ott/live/453/master.m3u8
-#EXTINF:-1 tvg-id="AaseervathamTV" tvg-name="Aaseervatham TV" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Aaseervatham TV
-https://shserver.in:1936/aaseervathamtv/aaseervathamtv/playlist.m3u8
-#EXTINF:-1 tvg-id="ArputharYesuTV" tvg-name="Arputhar Yesu TV" tvg-logo="https://arputharyesutv.net/wp-content/uploads/2022/07/AR-LOGO-PNG.png" group-title="Devotional",Arputhar Yesu TV
-https://arputharyesu.stream.onecloudlive.in/arputharyesutv/arputharyesutvhd/index.m3u8
-#EXTINF:-1 tvg-id="HebronTVTamil" tvg-name="Hebron TV Tamil" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Hebron TV Tamil
-https://live.hebrontamil.tv/hls/stream.m3u8
-#EXTINF:-1 tvg-id="NambikkaiTV" tvg-name="Nambikkai TV" tvg-logo="https://d1msejlow1t3l4.cloudfront.net/fta/nambikkaitv/playlist.m3u8" group-title="Devotional",Nambikkai TV
-https://shserver.in:1936/nambikkaitv/nambikkaitv/playlist.m3u8
-#EXTINF:-1 tvg-id="DivineMusicPrayers" tvg-name="Divine Music & Prayers" tvg-logo="https://ipcloud.live/novamani/divinetv/logo.png" group-title="Devotional",Divine Music & Prayers
-https://ipcloud.live/novamani/divinetv/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="SiddharIsaiBhakthi" tvg-name="Siddhar Isai Bhakthi" tvg-logo="https://3.proxy.nellaiiptv.com/DINESH/PT/logo.png" group-title="Devotional",Siddhar Isai Bhakthi
-https://3.proxy.nellaiiptv.com/DINESH/PT/index.m3u8?origin=github.com/amazeyourself&token=YAAL
 #EXTINF:-1 tvg-id="PolimerNewsLive" tvg-name="Polimer News Live" tvg-logo="https://i.imgur.com/5u8pUqN.png" group-title="News",Polimer News Live
-https://polimernews.akamaized.net/hls/live/2036484/polimernews/master.m3u8
+https://segment.yuppcdn.net/110322/polimernews/playlist.m3u8
 #EXTINF:-1 tvg-id="PuthiyaThalaimuraiExpressHD" tvg-name="Puthiya Thalaimurai Express HD" tvg-logo="https://i.imgur.com/LOY0rtp.png" group-title="News",Puthiya Thalaimurai Express HD
-https://ptfeed.akamaized.net/hls/live/2036483/ptfeed/master.m3u8
+https://samitaorigin.tangotv.in/PUTHIYAEXPRESS/SAMITAORIGIN/index.m3u8
 #EXTINF:-1 tvg-id="ThanthiTVLiveHD" tvg-name="Thanthi TV Live HD" tvg-logo="https://i.imgur.com/smQKa2G.png" group-title="News",Thanthi TV Live HD
-https://thanthitv.akamaized.net/hls/live/2036482/thanthitv/master.m3u8
+https://streams.tangotv.in/THANTHITV/ORIGIN/index.m3u8
 #EXTINF:-1 tvg-id="News18TamilNaduHD" tvg-name="News18 Tamil Nadu HD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_NEWS18_TAMIL_NADU/images/LOGO_HD/image.png" group-title="News",News18 Tamil Nadu HD
 https://n18syndication.akamaized.net/bpk-tv/News18_Tamil_Nadu_NW18_MOB/output01/master.m3u8
 #EXTINF:-1 tvg-id="News7TamilLive" tvg-name="News 7 Tamil Live" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_NEWS7_TAMIL/images/LOGO_HD/image.png" group-title="News",News 7 Tamil Live
 https://segment.yuppcdn.net/240122/news7/playlist.m3u8
-#EXTINF:-1 tvg-id="NewsTamil24x7HD" tvg-name="News Tamil 24x7 HD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_NEWS_TAMIL_24X7/images/LOGO_HD/image.png" group-title="News",News Tamil 24x7 HD
-https://cdn-3.pishow.tv/live/1433/master.m3u8
 #EXTINF:-1 tvg-id="ZeeTamilNewsHD" tvg-name="Zee Tamil News HD" tvg-logo="https://english.cdn.zeenews.com/images/logo/zee-tamil-logo-20.svg" group-title="News",Zee Tamil News HD
 https://raw.githubusercontent.com/amazeyourself/adaptive-streams/refs/heads/main/streams/in/ZMCL/ZeeTamilNews.m3u8
 #EXTINF:-1 tvg-id="DDTamilLive" tvg-name="DD Tamil Live" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_TAMIL/images/LOGO_HD/image.png" group-title="News",DD Tamil Live
 https://d2lk5u59tns74c.cloudfront.net/out/v1/abf46b14847e45499f4a47f3a9afe93d/index.m3u8
 #EXTINF:-1 tvg-id="SathiyamTVLive" tvg-name="Sathiyam TV Live" tvg-logo="https://mumt07.tangotv.in/zHjX9OFlSATHIYAMTV/index.m3u8" group-title="News",Sathiyam TV Live
-https://shserver.in:1936/sathiyamtv/sathiyamtv/playlist.m3u8
+https://mumt07.tangotv.in/zHjX9OFlSATHIYAMTV/index.m3u8
 #EXTINF:-1 tvg-id="MalaiMurasuSeithigal" tvg-name="Malai Murasu Seithigal" tvg-logo="https://i.imgur.com/FlG7npq.png" group-title="News",Malai Murasu Seithigal
-https://shserver.in:1936/malaimurasu/malaimurasu/playlist.m3u8
-#EXTINF:-1 tvg-id="KalaignarSeithigal" tvg-name="Kalaignar Seithigal" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="News",Kalaignar Seithigal
-https://shserver.in:1936/kalaignarseithigal/kalaignarseithigal/playlist.m3u8
+https://streams.tangotv.in/MALAIMURASUSEITHIGAL/ORIGIN/index.m3u8
 #EXTINF:-1 tvg-id="TamilJanamTV" tvg-name="Tamil Janam TV" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Janam_Tamil.png" group-title="News",Tamil Janam TV
 https://mumt01.tangotv.in/O5aw8Zn3JANAMTVTAMIL/index.m3u8
 #EXTINF:-1 tvg-id="MadhimugamTVLive" tvg-name="Madhimugam TV Live" tvg-logo="https://mumt01.tangotv.in/O5aw8Zn3MATHIMUGAMTV/index.m3u8" group-title="News",Madhimugam TV Live
@@ -131,10 +73,26 @@ https://mumt05.tangotv.in/87NeALx2VALICHAMPLUS/index.m3u8
 https://d1msejlow1t3l4.cloudfront.net/fta/moontv/playlist.m3u8
 #EXTINF:-1 tvg-id="MNaduTV" tvg-name="M Nadu TV" tvg-logo="https://cloudcdnplayer.mslivestream.net/mslivecdn/mnadu/index.m3u8" group-title="News",M Nadu TV
 https://cloudcdnplayer.mslivestream.net/mslivecdn/mnadu/index.m3u8
+#EXTINF:-1 tvg-id="SriSankaraTVTamil" tvg-name="Sri Sankara TV Tamil" tvg-logo="https://mumt05.tangotv.in/87NeALx2SRISANKARA/index.m3u8" group-title="Devotional",Sri Sankara TV Tamil
+https://mumt05.tangotv.in/87NeALx2SRISANKARA/index.m3u8
+#EXTINF:-1 tvg-id="SairamTVSaiBabaDevotional" tvg-name="Sairam TV (Sai Baba Devotional)" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Devotional",Sairam TV (Sai Baba Devotional)
+https://mumt04.tangotv.in/m18aqlK4SAIRAMTV/index.m3u8
+#EXTINF:-1 tvg-id="OMTVTamilDevotional" tvg-name="OM TV Tamil Devotional" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",OM TV Tamil Devotional
+https://mumt01.tangotv.in/O5aw8Zn3OMTV/index.m3u8
+#EXTINF:-1 tvg-id="AasthaTamil" tvg-name="Aastha Tamil" tvg-logo="https://i.imgur.com/YQK9ewf.png" group-title="Devotional",Aastha Tamil
+https://aasthaott.akamaized.net/110923/smil:aasthatamil.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="MadhaTVCatholicTamil" tvg-name="Madha TV (Catholic Tamil)" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Madha TV (Catholic Tamil)
+https://mumt07.tangotv.in/zHjX9OFlMADHATV/index.m3u8
+#EXTINF:-1 tvg-id="AngelTVHDTamil" tvg-name="Angel TV HD (Tamil)" tvg-logo="https://i.imgur.com/qKLEGU7.png" group-title="Devotional",Angel TV HD (Tamil)
+https://cdn.pishow.tv/ott/live/453/master.m3u8
+#EXTINF:-1 tvg-id="AaseervathamTV" tvg-name="Aaseervatham TV" tvg-logo="https://i.imgur.com/GlfrYs7.png" group-title="Devotional",Aaseervatham TV
+https://mumt04.tangotv.in/m18aqlK4AASEERVATHAMTV/index.m3u8
+#EXTINF:-1 tvg-id="DivineMusicPrayers" tvg-name="Divine Music & Prayers" tvg-logo="https://ipcloud.live/novamani/divinetv/logo.png" group-title="Devotional",Divine Music & Prayers
+https://ipcloud.live/novamani/divinetv/index.m3u8?origin=github.com/amazeyourself
+#EXTINF:-1 tvg-id="SiddharIsaiBhakthi" tvg-name="Siddhar Isai Bhakthi" tvg-logo="https://3.proxy.nellaiiptv.com/DINESH/PT/logo.png" group-title="Devotional",Siddhar Isai Bhakthi
+https://3.proxy.nellaiiptv.com/DINESH/PT/index.m3u8?origin=github.com/amazeyourself&token=YAAL
 #EXTINF:-1 tvg-id="RojaTVTamilLocal" tvg-name="Roja TV (Tamil Local)" tvg-logo="https://hls.rojatv.cloud/rojatv/logo.png" group-title="Tamil Local",Roja TV (Tamil Local)
 https://hls.rojatv.cloud/rojatv/rojatv/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="RojaLifestyleTV" tvg-name="Roja Lifestyle TV" tvg-logo="http://rojatventer.stream.nellaiiptv.com/rojatventer/logo.png" group-title="Tamil Local",Roja Lifestyle TV
-http://rojatventer.stream.nellaiiptv.com/rojatventer/rojatventer/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="SriVinayagaTVHD" tvg-name="Sri Vinayaga TV HD" tvg-logo="https://1.proxy.nellaiiptv.com/srivinayagatv/logo.png" group-title="Tamil Local",Sri Vinayaga TV HD
 https://1.proxy.nellaiiptv.com/srivinayagatv/hd/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="SuriyanTVLive" tvg-name="Suriyan TV Live" tvg-logo="https://live1.sscloud7.com/live/suriyantv/logo.png" group-title="Tamil Local",Suriyan TV Live
@@ -143,25 +101,43 @@ https://live1.sscloud7.com/live/suriyantv/index.m3u8?origin=github.com/amazeyour
 https://stream.rojatv.cloud/super/tv/index.m3u8?origin=github.com/amazeyourself
 #EXTINF:-1 tvg-id="SachinTVLive" tvg-name="Sachin TV Live" tvg-logo="https://ipcloud.live/sachintv/logo.png" group-title="Tamil Local",Sachin TV Live
 https://ipcloud.live/sachintv/sachintvhd/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="KarthikTVLive" tvg-name="Karthik TV Live" tvg-logo="https://ipcloud.live/karthick/logo.png" group-title="Tamil Local",Karthik TV Live
-https://ipcloud.live/karthick/karthicktvhd/index.m3u8?origin=github.com/amazeyourself
-#EXTINF:-1 tvg-id="JayaPlusNews" tvg-name="Jaya Plus News" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Jaya Plus News
-https://shserver.in:1936/jayaplus/jayaplus/playlist.m3u8
-#EXTINF:-1 tvg-id="JayaMaxMusic" tvg-name="Jaya Max Music" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Jaya Max Music
-https://shserver.in:1936/jayamax/jayamax/playlist.m3u8
-#EXTINF:-1 tvg-id="CaptainTV" tvg-name="Captain TV" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Captain TV
-https://shserver.in:1936/captaintv/captaintv/playlist.m3u8
 #EXTINF:-1 tvg-id="TamilanTVHD" tvg-name="Tamilan TV HD" tvg-logo="https://jiotvimages.cdn.jio.com/dare_images/images/Tamilan_Television.png" group-title="Tamil Local",Tamilan TV HD
-https://cdn.zionmediait.com/zionmediaitserver2024/97484f5ce6da96e496a9b87c439835d0.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="RKTVTenkasi" tvg-name="RK TV Tenkasi" tvg-logo="http://phoenixcreations.online/ott/jayamott/uploads/1775656903_WhatsApp Image 2026-04-08 at 7.01.09 PM (2).jpeg" group-title="Tamil Local",RK TV Tenkasi
-https://rktv-hs1.tamilstream.in/rktv/tenkasi/playlist.m3u8
+https://mumt04.tangotv.in/m18aqlK4TAMILANTELEVISION/index.m3u8
 #EXTINF:-1 tvg-id="AathvikTV" tvg-name="Aathvik TV" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1793183403_WhatsApp%20Image%202026-10-28%20at%203.59.15%20PM.jpeg" group-title="Tamil Local",Aathvik TV
 https://stream.apcloud.in/manishatv/manishatvstream/index.m3u8
 #EXTINF:-1 tvg-id="JTKTVTirunelveli" tvg-name="JTK TV Tirunelveli" tvg-logo="http://phoenixcreations.online/ott/joshuaott/uploads/1761369484_jtk.png" group-title="Tamil Local",JTK TV Tirunelveli
 https://ktismaservers.in:3346/live/jtktvlive.m3u8
-#EXTINF:-1 tvg-id="ShakthiTVTamil" tvg-name="Shakthi TV Tamil" tvg-logo="https://i.imgur.com/1Xzxsgl.png" group-title="Tamil Local",Shakthi TV Tamil
-https://shakthitv.akamaized.net/hls/live/2036481/shakthitv/master.m3u8
-#EXTINF:-1 tvg-id="DanTVTamil" tvg-name="Dan TV Tamil" tvg-logo="https://i.imgur.com/1Xzxsgl.png" group-title="Tamil Local",Dan TV Tamil
-https://dantv.akamaized.net/hls/live/2036480/dantv/master.m3u8
-#EXTINF:-1 tvg-id="VasanthamTVTamil" tvg-name="Vasantham TV Tamil" tvg-logo="https://i.imgur.com/1Xzxsgl.png" group-title="Tamil Local",Vasantham TV Tamil
-https://vasanthamtv.akamaized.net/hls/live/2036479/vasanthamtv/master.m3u8
+#EXTINF:-1 tvg-id="VaanavilTV" tvg-name="Vaanavil TV" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Vaanavil TV
+https://mumt01.tangotv.in/O5aw8Zn3VAANAVILTV/index.m3u8
+#EXTINF:-1 tvg-id="VasanthTV" tvg-name="Vasanth TV" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Vasanth TV
+https://mumt04.tangotv.in/m18aqlK4VASANTHTV/index.m3u8
+#EXTINF:-1 tvg-id="VendharTV" tvg-name="Vendhar TV" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Tamil Local",Vendhar TV
+https://mumt04.tangotv.in/m18aqlK4VENDHARTV/index.m3u8
+#EXTINF:-1 tvg-id="ThanthiOne" tvg-name="Thanthi One" tvg-logo="https://i.imgur.com/smQKa2G.png" group-title="Tamil Local",Thanthi One
+https://mumt07.tangotv.in/zHjX9OFlTHANTHIONE/index.m3u8
+#EXTINF:-1 tvg-id="KTVHDVLCSatelliteFeed" tvg-name="KTV HD [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z1SEP.png?lock=720x540" group-title="Satellite Feeds (VLC)",KTV HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/K_TV/index.m3u8
+#EXTINF:-1 tvg-id="SunMusicHDVLCSatelliteFeed" tvg-name="Sun Music HD [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Satellite Feeds (VLC)",Sun Music HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/SUN_MUSIC_SD/index.m3u8
+#EXTINF:-1 tvg-id="ZeeThiraiHDVLCSatelliteFeed" tvg-name="Zee Thirai HD [VLC Satellite Feed]" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_THIRAI_HD/images/LOGO_HD/LOGO_HD_image.png" group-title="Satellite Feeds (VLC)",Zee Thirai HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/ZEE_THIRAI/index.m3u8
+#EXTINF:-1 tvg-id="SunTVHDVLCSatelliteFeed" tvg-name="Sun TV HD [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Satellite Feeds (VLC)",Sun TV HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/SUN_TV/index.m3u8
+#EXTINF:-1 tvg-id="ZeeTamilHDVLCSatelliteFeed" tvg-name="Zee Tamil HD [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG00233WCL.png?lock=720x540" group-title="Satellite Feeds (VLC)",Zee Tamil HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/ZEE_TAMIL_HD/index.m3u8
+#EXTINF:-1 tvg-id="StarVijayHDVLCSatelliteFeed" tvg-name="Star Vijay HD [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z1SEP.png?lock=720x540" group-title="Satellite Feeds (VLC)",Star Vijay HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/STAR_VIJAY/index.m3u8
+#EXTINF:-1 tvg-id="VijaySuperHDVLCSatelliteFeed" tvg-name="Vijay Super HD [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z1SEP.png?lock=720x540" group-title="Satellite Feeds (VLC)",Vijay Super HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/VIJAY_SUPER/index.m3u8
+#EXTINF:-1 tvg-id="AdithyaTVComedyVLCSatelliteFeed" tvg-name="Adithya TV Comedy [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Satellite Feeds (VLC)",Adithya TV Comedy [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/ADITYA_TV/index.m3u8
+#EXTINF:-1 tvg-id="SunNewsLiveVLCSatelliteFeed" tvg-name="Sun News Live [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Satellite Feeds (VLC)",Sun News Live [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/SUN_NEWS/index.m3u8
+#EXTINF:-1 tvg-id="SunLifeHDVLCSatelliteFeed" tvg-name="Sun Life HD [VLC Satellite Feed]" tvg-logo="https://dtil.tmsimg.com/assets/GNLZZGG002Z0DG5.png?lock=720x540" group-title="Satellite Feeds (VLC)",Sun Life HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/SUN_LIFE/index.m3u8
+#EXTINF:-1 tvg-id="ColorsTamilHDVLCSatelliteFeed" tvg-name="Colors Tamil HD [VLC Satellite Feed]" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_TAMIL/images/LOGO_HD/image.png" group-title="Satellite Feeds (VLC)",Colors Tamil HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/COLORS_TAMIL/index.m3u8
+#EXTINF:-1 tvg-id="KalaignarTVVLCSatelliteFeed" tvg-name="Kalaignar TV [VLC Satellite Feed]" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Satellite Feeds (VLC)",Kalaignar TV [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/KALAIGNAR_TV/index.m3u8
+#EXTINF:-1 tvg-id="JayaTVHDVLCSatelliteFeed" tvg-name="Jaya TV HD [VLC Satellite Feed]" tvg-logo="https://i.imgur.com/zDiIhdN.png" group-title="Satellite Feeds (VLC)",Jaya TV HD [VLC Satellite Feed]
+http://ptuf.ridsys.in/riptv/live/JAYA_TV/index.m3u8
